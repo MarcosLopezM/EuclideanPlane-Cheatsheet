@@ -160,12 +160,30 @@
     \end{theorem}
 
     \begin{obs}
-        \begin{equation*}
-            \vb*{u}_{i} = f(\vb*{e}_{i}).
-        \end{equation*}
+        \(\vb*{u}_{i} = f(\vb*{e}_{i}).\)
     \end{obs}
 
     \begin{corollary}
         Si \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) y \(g \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) son dos funciones lineales tales que \(f(\vb*{e}_{i}) = g(\vb*{e}_{i})\) para \(i = 1,\ 2,\ \dots,\ n\), entonces \(f(x) = g(x)\) para toda \(x\in\mathbb{R}^{n}\).
     \end{corollary}
+
+    \section{La estructura de las funciones lineales}
+
+    Sea  \(\mathcal{L}(n, m)\) el conjunto de todas las funciones lineales de \(\mathbb{R}^{n} \to \mathbb{R}^{m}\), es decir,
+
+    \begin{equation*}
+        \mathcal{L}(n, m) = \left\lbrace f \colon \mathbb{R}^{n} \to \mathbb{R}^{m} \mid \text{f es lineal}\right\rbrace.
+    \end{equation*}
+
+    Con el codominio se tienen las operaciones de suma y multiplicación por escalares, estas operaciones se pueden definir también en las funciones; en cierta, las funciones las heredan. Dadas \(f,\ g \in \mathcal{L}(n, m)\) y \(t\in\mathbb{R}\), sean
+
+    \begin{equation*}
+        f + g \colon \mathbb{R}^{n} \to \mathbb{R}^{m}, \qquad (f + g)(x) \coloneq f(x) + g(x)
+    \end{equation*}
+
+    y
+
+    \begin{equation*}
+        tf \ordinarycolon \mathbb{R}^{n} \to \mathbb{R}^{m}, \qquad (tf)(x) \coloneq t(f(x)).
+    \end{equation*}
 \end{document}
