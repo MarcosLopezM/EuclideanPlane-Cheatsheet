@@ -1,0 +1,476 @@
+\documentclass{article}
+
+\usepackage{amsfonts, amsmath,amssymb,amsthm}   % Paquetes de simbología matemática básica
+\usepackage{lmodern,microtype,bm}     % Fuente y espaciado entre letras; lo deja bonito
+\usepackage{dsfont, graphicx}
+\usepackage{mathrsfs, halloweenmath,xcolor}
+\usepackage{MnSymbol}
+\usepackage{mathtools}
+\usepackage{multicol,titlesec}
+\usepackage[shortlabels]{enumitem}    % Continuar listas en mini-páginas distintas
+\usepackage{physics}
+\usepackage[english,spanish]{babel}   % Cambia los comandos de texto predeterminados (capítulos, 			                                        secciones, bibliografía, etc.) a español
+\decimalpoint
+\usepackage[style=mexican]{csquotes}  % Comillas y otros elementos de citación
+\textwidth 16cm                       % Ancho
+\oddsidemargin -0.0cm                 % Espacio de margen (como es formato de libro, los margenes se 		                                        declaran para páginas pares e impares
+
+\newtheoremstyle{definicion}% name
+{3pt}% Space above
+{3pt}% Space below
+{}% Body font
+{}% Indent amount
+{\color{blue}\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}%
+\theoremstyle{definicion}
+\newtheorem{definicion}{Def.}
+
+\theoremstyle{definition}             % Con el paquete amsmath se pueden personalizar los estilos de
+\newtheorem*{inst}{Instrucciones}
+
+\theoremstyle{definition}             % Con el paquete amsmath se pueden personalizar los estilos de
+\newtheorem{sol}{Solución}
+
+\theoremstyle{definition}
+\newtheorem{record}{Recordatorio}
+
+\theoremstyle{definition}
+\newtheorem{properties}{Propiedades}
+
+\newtheoremstyle{observacion}% name
+{3pt}% Space above
+{3pt}% Space below
+{}% Body font
+{}% Indent amount
+{\color{red}\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}%
+\theoremstyle{observacion}
+\newtheorem{obs}{Obs.}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposición}
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lema}
+\newtheorem{theorem}{Teorema}
+
+\theoremstyle{definition}
+\newtheorem{exe}{Ejemplo}
+
+\newtheoremstyle{afirmacion}% name
+{3pt}% Space above
+{3pt}% Space below
+{}% Body font
+{}% Indent amount
+{\color{green!40!black}\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}%
+\theoremstyle{afirmacion}
+\newtheorem{aff}{Aff.}
+
+\theoremstyle{definition}
+\newtheorem{eje}{Ejercicio}
+
+\setlength{\parindent}{2em}           % Sangría
+\setlength{\parskip}{0.5em}           % Espacio entre párrafos
+
+\title{\Huge{Logaritmos y exponencial}}
+\author{Cálculo 2 4109}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \section{Logaritmos}
+    \subsection{Definición y propiedades del logaritmo natural}
+
+    \begin{definicion}[Logaritmo natural]   
+        Consideramos \(\log \colon (0, \infty) \subseteq \mathbb{R} \to \mathbb{R}\), \(\int_{1}^{x}\frac{1}{t}\dd{t}.\)
+    \end{definicion}
+
+    \begin{properties}
+        \vphantom{adfslfjsdlfjdslajfakjfkdlsjfakjfljdaskfjlasdjflkasjfdkajd}
+        \begin{enumerate}[label = \roman*)]
+            \item \(\log(1) = 0 (\int_{1}^{1}\frac{1}{t}\dd{t})\)
+            \item \(\log\) es continua (función integral).
+            \item \(\log\) es derivable (Por T.F.C., pues \(f(t) = \frac{1}{t}\) es continua),
+                \begin{equation*}
+                    \log^{\prime}(x) = \dfrac{1}{x}.        
+                \end{equation*}
+            \item \(\log\) es estrictamente creciente, pues 
+                \begin{equation*}
+                    x > 0\, \Rightarrow\, \log^{\prime}(x) = \dfrac{1}{x} > 0.
+                \end{equation*}
+            
+            \item Signo del logaritmo 
+            
+                \begin{equation*}
+                    \begin{cases}
+                        \log > 0\, &\Leftrightarrow\, x > 1,\\
+                        \log < 0\, &\Leftrightarrow\, 0 < x < 1.
+                    \end{cases}
+                \end{equation*}
+
+            \item \(\log\) es inyectiva.
+        \end{enumerate}
+    \end{properties}
+
+    \begin{obs}
+        \(\dfrac{1}{2} < \log(2) < 1.\)
+    \end{obs}
+
+    \begin{prop}[Leyes de los logaritmos]
+        Sea \(\log \colon (0, \infty) \subseteq \mathbb{R} \to \mathbb{R}\) como se definió antes, y consideramos \(a > 0,\, b > 0\), \(r\in\mathbb{R}\).
+        
+        \begin{enumerate}[label = \roman*)]
+            \item \(\log(ab) = \log(a) + \log(b)\),
+            \item \(\log(\frac{a}{b}) = \log(a) - \log(b)\),
+            \item \(\log(a^{r}) = r\log(a)\).
+        \end{enumerate}
+    \end{prop}
+
+    \begin{obs}
+        \(\log(4) > 1.\)
+    \end{obs}
+
+    \begin{prop}
+        \(\exists x_{0} > 0 \colon \log(x_{0}) = 1.\)
+    \end{prop}
+
+    \begin{definicion}[Número de Euler] 
+        Denotamos \(e\) al número positivo que satisface 
+
+        \begin{equation*}
+            \int_{1}^{e} \dfrac{1}{t}\dd{t} = 1.
+        \end{equation*}
+
+        Se puede demostrar que \(2 < e < 3\).
+    \end{definicion}
+
+    \section{Exponencial}
+    \subsection{Invertibilidad del logaritmo}
+
+    \begin{obs}
+        \(\log^{\prime}(x) = \frac{1}{x}\, \Rightarrow\, \lim_{x\to\infty}\log^{\prime}(x) = 0\), \emph{i.e.}, \(\log\) es una función que se hace cada vez más horizontal.
+    \end{obs}
+
+    \begin{aff}
+        \(\forall y \in \mathbb{R} \exists x > 0 \colon  \log(x) = y. (\Im_{\log} = \mathbb{R})\)
+    \end{aff}
+
+    \begin{aff}
+        \(\lim_{x\to\infty} \log(x) = \infty.\)
+    \end{aff}
+
+    \begin{aff}
+        \(\lim_{x \to 0^{+}}\log(x) = -\infty.\)
+    \end{aff}
+
+    \begin{definicion}[Función exponencial]
+        Sea \(\log \colon (0, \infty) \subseteq \mathbb{R} \to \mathbb{R}\) la función biyectiva discutida antes. Definimos 
+
+        \begin{equation*}
+            \exp = \log^{-1} \colon \mathbb{R} \to (0,\infty) \subseteq \mathbb{R}.
+        \end{equation*}
+    \end{definicion}
+
+    \begin{obs}
+        \(\forall x\in\mathbb{R} \colon \exp(x) > 0.\)
+    \end{obs}
+
+    \begin{obs}
+        \(\exp \colon \mathbb{R} \to (0,\infty) \subseteq \mathbb{R}\) es biyectiva.    
+    \end{obs}
+
+    \begin{obs}
+        \vphantom{fdasjfldjfksadjflksafafaklsjfa}
+        \begin{equation*}
+            \begin{cases}
+                \forall x > 0 &\colon \exp(\log(x)) = x,\\
+                \forall y \in \mathbb{R} &\colon \log(\exp(y)) = y.
+            \end{cases}
+        \end{equation*}
+    \end{obs}
+
+    \begin{record}[Teorema de la función inversa]
+        Sea \(f \colon [a,b]\subseteq \mathbb{R} \to [c,d]\subseteq \mathbb{R}\) una función biyectiva y derivable tal que \(\forall x\in[a,b] \colon f^{\prime}(x) \neq 0\). Entonces \(f^{-1} \colon [c,d] \to [a,b]\) es derivable, y se tiene la siguiente fórmula:
+
+        \begin{align*}
+            (f^{-1})^{\prime}(y) &= \dfrac{1}{f^{\prime}(f^{-1}(y))},\\
+            f \circ f^{-1} = I &\Rightarrow (f \circ f^{-1})^{\prime} = 1,\\
+            &\Rightarrow (f^{\prime} \circ f^{-1})(f^{-1})^{\prime} = 1,\\
+            &\Rightarrow (f^{-1})^{\prime} = \dfrac{1}{f^{\prime} \circ f^{-1}}.
+        \end{align*}
+    \end{record}
+
+    \begin{prop}[Leyes de los exponentes]
+        Sean \(x_{1}\in\mathbb{R},\, x_{2}\in\mathbb{R}\).
+        
+        \begin{enumerate}[label = \roman*)]
+            \item \(\exp(x_{1} + x_{2}) = \exp(x_{1})\exp(x_{2})\).
+            \item \(\exp(x_{1}x_{2}) = (\exp(x_{1}))^{x_{2}}\).
+        \end{enumerate}
+    \end{prop}
+
+    \begin{aff}
+        \(\lim_{x\to\infty} \exp(x) = \infty\).
+    \end{aff}
+
+    \begin{aff}
+        \(\lim_{x\to -\infty} \exp(x) = 0\).
+    \end{aff}
+
+    \begin{definicion}[Potencias]
+        Sea \(a > 0\). Definimos
+
+        \begin{equation*}
+            a^{x} \coloneq e^{x\log(a)}.
+        \end{equation*}
+
+        Esto es consistente con nuestra intuición, pues 
+
+        \begin{equation*}
+            e^{x\log(a)} = \exp(x\log(a)) = (\exp(\log(a)))^{x} = a^{x}.
+        \end{equation*}
+    \end{definicion}
+
+    \begin{definicion}[Logaritmo base a]
+        Sea \(a > 0\). Definimos 
+        
+        \begin{equation*}
+            \log_{a}(x) \coloneq \dfrac{\log(x)}{\log(a)}.
+        \end{equation*}
+
+        Esto es consistente con lo discutido antes, pues
+
+        \begin{equation*}
+            a^{\log_{a}(x)} = e^{\log(a)\log_{a}(x)} = e^{\log(a)\frac{\log(x)}{\log(a)}} = e^{\log(x)} = x.
+        \end{equation*}
+
+        Además,
+
+        \begin{equation*}
+            \exp_{a}(x) = a^{x} = e^{x\log(a)}.
+        \end{equation*}
+
+        Asimismo, las mismas propiedades que se cumplen para la exponencial y el logaritmo, se cumplen para las potencias y los logaritmos base \(a\).
+    \end{definicion}
+
+    \section{Límites importantes}
+
+    \begin{record}
+        \(f\) continua en \(L\), \(\lim_{x\to a} g(x) = L\),
+
+        \begin{equation*}
+            \Rightarrow\, \lim_{x\to a} f \circ g (x) = f(L) = f(\lim_{x\to a}g(x)).
+        \end{equation*}
+    \end{record}
+
+    \begin{obs}
+        Algunas fórmulas de antiderivación tienen su versión definida.
+    \end{obs}
+
+    \begin{aff}
+        \(f\) tiene primitiva \(\Rightarrow\, \int_{a}^{b}f(g(t))\vdot g^{\prime}(t)\dd{t} = \int_{g(a)}^{g(b)}f(u) \dd{u}\).
+    \end{aff}
+
+    \begin{aff}
+        \(f,g\) de clase \(\mathscr{C}^{1}\), entonces 
+
+        \begin{equation*}
+            \int_{a}^{b}f(t)g^{\prime}(t)\dd{t} = [f(t)g(t)]_{a}^{b} - \int_{a}^{b}f^{\prime}(t)g(t)\dd{t}.
+        \end{equation*}
+    \end{aff}
+
+    \section{Integrales impropias}
+
+    \subsection{Integrales impropias tipo I}
+
+    Las integrales impropias se dividen en dos:
+
+    \begin{enumerate}
+        \item \(D_{f} = [a,b]\) acotado. (Tipo I, domino no-acotado.)
+        \item \(f\) acotada. (Tipo II, imagen no-acotada.)
+    \end{enumerate}
+
+    \begin{definicion}[Integral impropia I]
+        Sea \(f\colon [a,\infty)\subseteq \mathbb{R}\to\mathbb{R}\), tal que \(f\) es integrable en cualquier intervalo \([a, M]\), para \(M > a\). Nombremos la \textcolor{purple}{integral impropia de tipo I}, denota por \(\int_{a}^{\infty}f(t)\dd{t}\), al límite,
+
+        \begin{equation*}
+            \int_{a}^{\infty}f(t)\dd{t} = \lim_{M \to \infty} \int_{a}^{M}f(t)\dd{t},
+        \end{equation*}
+
+        cuando sea que dicho límite exista.
+    \end{definicion}
+
+    \begin{prop}
+        \(\exists \int_{a}^{\infty}f(t)\dd{t}\in\mathbb{R} \wedge \exists \lim_{t\to\infty}f(t)\, \Rightarrow\, \lim_{t \to \infty} f(t) = 0\).
+    \end{prop}
+
+    \begin{exe}
+        ¿\(\lim_{x\to\infty}f(x) = 0,\, \implies \exists \int_{a}^{\infty}f(t)\dd{t}\)?\\
+        La implicación es \textbf{falsa} y unos contraejemplos son:
+
+        \begin{equation*}
+            f(x) = \dfrac{1}{x},\quad f(x) = \dfrac{1}{\sqrt{x}}.
+        \end{equation*}
+    \end{exe}
+
+    \begin{theorem}[Criterio de comparación]
+        Sean \(f,g \colon [a,\infty)\subseteq \mathbb{R} \to \mathbb{R}\) integrables en cualquier subintervalo \([a,M]\), para toda \(M > a\), y tales que 
+
+        \begin{equation*}
+            \forall x\in [a,\infty)\colon 0 \leq f(x) \leq g(x).
+        \end{equation*}
+
+        \begin{enumerate}
+            \item \(\exists \int_{a}^{\infty}g(x)\dd{x}\in\mathbb{R} \implies \exists \int_{a}^{\infty}f(x)\dd{x}\in\mathbb{R}\),
+            \item \(\int_{a}^{\infty}f(x)\dd{x} = \infty \implies \int_{a}^{\infty}g(x)\dd{x} = \infty\).
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{definicion}
+        \vphantom{afjdhgsjlfalhjdfkajfjhfdajsd}
+        \begin{equation*}
+            \int_{-\infty}^{a}f(x)\dd{x} = \lim_{M\to\infty}\int_{-M}^{a}f(x)\dd{x} = \lim_{M\to - \infty}\int_{M}^{a}f(x)\dd{x}.
+        \end{equation*}
+    \end{definicion}
+
+    \begin{definicion}
+        Sea \(f\colon \mathbb{R}\to\mathbb{R}\) e integrable en cualquier intervalo \([a,b]\subseteq \mathbb{R}\). Diremos que la integral impropia \(\int_{-\infty}^{\infty}f(x)\dd{x}\) existe cuando 
+
+        \begin{equation*}
+            \exists \int_{-\infty}^{\infty}f(x)\dd{x} = \int_{-\infty}^{0}f(x)\dd{x} + \int_{a}^{\infty}f(x)\dd{x}.
+        \end{equation*}
+
+        Es decir,
+
+        \begin{equation*}
+            \exists \int_{-\infty}^{\infty}f(x)\dd{x} \Leftrightarrow \exists \int_{-\infty}^{0}f(x)\dd{x}\quad \wedge \quad \exists\int_{0}^{\infty}f(x)\dd{x}.
+        \end{equation*}
+    \end{definicion}
+
+    \begin{definicion}[Valor Principal de Cauchy]
+        \begin{equation*}
+            VPC(x) = \lim_{M\to\infty} \int_{-M}^{M}f(x)\dd{x}.
+        \end{equation*}
+    \end{definicion}
+
+    \subsection{Convergencia absoluta}
+
+    \begin{theorem}[Convergencia absoluta]
+        \(f\colon [a,\infty) \to \mathbb{R}\), \(f\) integrable en cualquier \(a, M\), \(\forall M > a\).
+        
+        \begin{equation*}
+            \exists \int_{a}^{\infty} \abs{f(x)}\dd{x} \in \mathbb{R} \implies \exists \int_{a}^{\infty}f(x)\dd{x}.
+        \end{equation*}
+    \end{theorem}
+
+    \begin{exe}
+        ¿\(\exists \int_{a}^{\infty}f(x)\dd{x} \implies \exists \int_{a}^{\infty}\abs{f(x)}\dd{x}\)?\\
+        La implicación es \textbf{falsa}. Un contraejemplo es:
+
+        \begin{equation*}
+            \exists\int_{1}^{\infty}\dfrac{\sin(x)}{x}\dd{x},\, \text{pero}\, \int_{1}^{\infty}\abs{\dfrac{\sin(x)}{x}}\dd{x} = \infty.
+        \end{equation*}
+    \end{exe}
+
+    \begin{record}
+        \vphantom{jlfjdaksjflkajdf}
+        \begin{equation*}
+            \int_{-\infty}^{\infty}f(x)\dd{x} = \int_{-\infty}^{0}f(x)\dd{x} + \int_{a}^{\infty}f(x)\dd{x}.
+        \end{equation*}
+    \end{record}
+
+    \begin{prop}
+        \vphantom{faldfhsjfhasjdhfajsf}
+        \begin{equation*}
+            \exists \int_{-\infty}^{\infty}f(x)\dd{x} \implies \exists VPC(f) = \int_{-\infty}^{\infty}f(x)\dd{x}.
+        \end{equation*}
+    \end{prop}
+
+    \begin{obs}
+        \vphantom{jdflsajfkdjflk}
+        \begin{align*}
+            \exists \int_{-\infty}^{\infty}f(x)\dd{x} &\implies \exists VPC(f) = \int_{-\infty}^{\infty}f(x)\dd{x},\\
+            \exists VPC(f) &\nRightarrow \exists \int_{-\infty}^{\infty}f(x)\dd{x}.
+        \end{align*}
+    \end{obs}
+
+    \subsection{Integrales impropias tipo II}
+    
+    \begin{definicion}[Integral impropia II]
+        Sea \(f\colon (a,b] \subseteq \mathbb{R}\to\mathbb{R}\) tal que \(f\) es integrable en cualquier intervalo \([d,b]\), para \(a < d < b\). Llamamos la \textcolor{purple}{integral impropia de tipo II} al límite siguiente:
+
+        \begin{align*}
+            \int_{a}^{b} f(x) \dd{x} &= \lim_{d\to a^{+}}\int_{d}^{b}f(x)\dd{x},\\
+            &= \lim_{\delta \to 0^{+}}\int_{a + \delta}^{b}f(x)\dd{x}.
+        \end{align*}
+
+        Análogamente, para \(f \colon [a,b)\subseteq\mathbb{R}\to\mathbb{R}\), definimos, 
+
+        \begin{align*}
+            \int_{a}^{b} f(x) \dd{x} &= \lim_{d\to b^{-}}\int_{a}^{d}f(x)\dd{x},\\
+            &= \lim_{\delta \to 0^{+}}\int_{a}^{b - \delta}f(x)\dd{x},\\
+            &= \lim_{\delta \to 0^{-}}\int_{a}^{b + \delta}f(x)\dd{x}.
+        \end{align*}
+    \end{definicion}
+
+    \begin{theorem}[Criterio de comparación (Tipo II)]
+        \(0 \leq f(x) \leq g(x)\).
+
+        \begin{enumerate}
+            \item \(\exists \int_{a}^{b}g(x)\dd{x}\in\mathbb{R} \implies \exists \int_{a}^{b}f(x)\dd{x}\in\mathbb{R}\).
+            \item \(\int_{a}^{b}g(x)\dd{x} = \infty \implies \int_{a}^{b}g(x)\dd{x} = \infty\).
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{theorem}[Convergencia absoluta (Tipo II)]
+        \vphantom{flfjdaslkjfaskdjf}
+        \begin{equation*}
+            \exists \int_{a}^{b}\abs{f(x)}\dd{x}\in\mathbb{R} \implies \exists \int_{a}^{b}f(x)\dd{x}\in\mathbb{R}.
+        \end{equation*}
+    \end{theorem}
+
+    \section{Función Gamma}
+
+    \section{Taller 7}
+
+    \begin{eje}
+        Considera la función \(f \colon \mathbb{R} \to \mathbb{R}\) con regla de correspondencia \(f(x) = x^{3}e^{x}\). Realiza un esbozo de su gráfica, considerando los siguientes puntos:
+        \begin{enumerate}[label = \alph*)]
+            \item Puntos críticos.
+            \item Intervalos de monotonía.
+            \item Intervalos de concavidad o convexidad.
+            \item Puntos de inflexión.
+            \item Límites a \(\pm \infty\).
+        \end{enumerate}
+    \end{eje}
+
+    \begin{eje}
+        Determina si existen o no las siguientes integrales impropias.
+
+        \begin{multicols}{2}
+            \begin{enumerate}[label = \alph*)]
+                \item \(\int_{1}^{\infty} \dfrac{\sqrt{x}}{1 + x}\dd{x}\)
+                \item \(\int_{0}^{\infty} \dfrac{\sin(x)}{1 + \sin[2](x) + x^{2}}\dd{x}\)
+                \item \(\int_{0}^{1}\dfrac{1}{x^{2} + \sqrt{x}}\dd{x}\)
+                \item \(\int_{0}^{1}\dfrac{1}{xe^{x}}\dd{x}\)
+            \end{enumerate}
+        \end{multicols}
+    \end{eje}
+
+    \begin{eje}
+        Determina que para toda \(n\in\mathbb{N}\) se tiene 
+
+        \begin{equation*}
+            \lim_{x\to\infty}\dfrac{\log^{n}(x)}{x} = 0.
+        \end{equation*}
+    \end{eje}
+
+\end{document}
