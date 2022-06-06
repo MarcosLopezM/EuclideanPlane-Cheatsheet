@@ -71,7 +71,7 @@
 {.5em}% Space after theorem head
 {}%
 \theoremstyle{afirmacion}
-\newtheorem{aff}{Aff.}
+\newtheorem{corollary}{Corolario}
 
 \theoremstyle{definition}
 \newtheorem{eje}{Ejercicio}
@@ -80,7 +80,7 @@
 \setlength{\parskip}{0.5em}           % Espacio entre párrafos
 
 \title{\Huge{Funciones lineales}}
-\author{Cálculo 2 4109}
+\author{Geometría Analítica I}
 \date{\today}
 
 \begin{document}
@@ -116,6 +116,58 @@
     \begin{obs}
         Las transformaciones ortogonales son funciones lineales.
     \end{obs}
+
+    \section{Extensión lineal}
+
+    Dados los vectores \(\vb*{v}_{1},\ \vb*{v}_{2}, \dots, \vb*{v}_{k}\) en \(\mathbb{R}^{n}\), una \textcolor{blue}{combinación lineal} de ellos es el vector
+
+    \begin{equation*}
+        \sum_{i = 1}^{k} \lambda_{i} \vb*{v}_{i}\in\mathbb{R}^{n},
+    \end{equation*}
+
+    donde \(\lambda_{i}\in\mathbb{R},\ i = 1, \dots, k\), son escalares cualesquiera a los que llamamos los \textcolor{red}{coeficientes} de la combinación lineal.
+
+    Si tenemos una función lineal \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\), se cumple que preserva combinaciones lineales pues
+
+    \begin{equation*}
+        f\left(\sum_{i = 1}^{k} \lambda_{i} \vb*{v}_{i}\right) = \sum_{i = 1}^{k} f(\lambda_{i} \vb*{v}_{i}) = \sum_{i = 1}^{k} \lambda_{i} f(\vb*{v}_{i}).
+    \end{equation*}
+    
+    Así que podemos redefinir la \textcolor{blue}{función lineal} como aquella que cumple:
+    
+    \begin{equation*}
+        f\left(\sum_{i = 1}^{k} \lambda_{i} \vb*{v}_{i}\right) = \sum_{i = 1}^{k} \lambda_{i} f(\vb*{v}_{i}),
+    \end{equation*}
+
+    para cualesquiera \(\vb*{v}_{1},\ \vb*{v}_{2}, \dots, \vb*{v}_{k}\in\mathbb{R}^{n}\) y \(\lambda_{1},\ \lambda_{2}, \dots,\ \lambda_{k}\in\mathbb{R}\).
+
+    Si tomamos \(n\) vectores \(\vb*{u}_{1},\ \vb*{u}_{2}, \dots,\ \vb*{u}_{n} \in \mathbb{R}^{m}\) arbitrariamente, y queremos encontrar una función lineal \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) que cumpla \(f(\vb*{e}_{i}) = \vb*{u}_{i}\) para \(i = 1, 2, \dots, n\), entonces debemos definirla en todo \(\mathbb{R}^{n}\) como
+
+    \begin{equation*}
+        f(x_{1}, x_{2}, \dots, x_{n}) = \sum_{i = 1}^{n} x_{i} \vb*{u}_{i}.
+    \end{equation*}
+
+    A esta función se le llama la \textcolor{red}{extensión lineal a \(\mathbb{R}^{n}\)} de lo que determinamos para la base canónica.
+
+    \begin{theorem}
+        Una función \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) es lineal si y solo si se escribe
+
+        \begin{equation*}
+            f(x_{1}, x_{2}, \dots, x_{n}) = x_{1}\vb*{u}_{1} + x_{2}\vb*{u}_{2} + \cdots + x_{n}\vb*{u}_{n} = \sum_{i = 1}^{n} x_{i} \vb*{u}_{i},
+        \end{equation*}
+
+        donde \(\vb*{u}_{1},\ \vb*{u}_{2},\ \dots,\ \vb*{u}_{n}\in\mathbb{R}^{m}\).
+    \end{theorem}
+
+    \begin{obs}
+        \begin{equation*}
+            \vb*{u}_{i} = f(\vb*{e}_{i}).
+        \end{equation*}
+    \end{obs}
+
+    \begin{corollary}
+        Si \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) y \(g \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) son dos funciones lineales tales que \(f(\vb*{e}_{i}) = g(\vb*{e}_{i})\) para \(i = 1,\ 2,\ \dots,\ n\), entonces \(f(x) = g(x)\) para toda \(x\in\mathbb{R}^{n}\).
+    \end{corollary}
 
     \section{Logaritmos}
     \subsection{Definición y propiedades del logaritmo natural}
