@@ -73,6 +73,18 @@
 \theoremstyle{afirmacion}
 \newtheorem{corollary}{Corolario}
 
+\newtheoremstyle{notation}% name
+{3pt}% Space above
+{3pt}% Space below
+{}% Body font
+{}% Indent amount
+{\color{magenta}\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}%
+\theoremstyle{notation}
+\newtheorem{notation}{Notación}
+
 \theoremstyle{definition}
 \newtheorem{eje}{Ejercicio}
 
@@ -186,4 +198,26 @@
     \begin{equation*}
         tf \ordinarycolon \mathbb{R}^{n} \to \mathbb{R}^{m}, \qquad (tf)(x) \coloneq t(f(x)).
     \end{equation*}
+
+    \section{Matrices}
+
+    Las matrices son arreglos rectangulares de números, tablas podría decirse, donde los renglones y las columnas no tienen ningún significado extra. En nuestro contexto actual, habrán de ser los \emph{paquetes} que cargan toda la información de las funciones lineales y nos darán la herramienta para hacer cálculos respecto de ellas, además de simplificar la notación.
+
+    \subsection{Vectores columna}
+
+    \begin{notation}
+        De ahora en adelante, los vectores en \(\mathbb{R}^{n}\) se escribirán como columnas y no como renglones. Es decir, si antes escribíamos \(x = (x_{1}, x_{2}, \dots, x_{n})\), ahora escribiremos
+
+        \begin{equation*}
+            x = \mqty(x_{1}\\ x_{2}\\ \vdots \\ x_{n}).
+        \end{equation*}
+
+        El inconveniente de que entonces se complica escribir un vector dentro del texto, lo subsanamos al llamar a los vectores renglón \textcolor{blue}{transpuestos}, y los denotaremos con \(x^{\top} = (x_{1}, x_{2}, \dots, x_{n})\), o bien, \(x = (x_{1}, x_{2}, \dots, x_{n})^{\top}\), conviniendo que los \textcolor{blue}{transpuestos} de vectores renglón son los vectores. Aunque a veces se nos va a olvidar poner el exponente \(\top\) de ``transpuesto''.
+
+        Así, por ejemplo, tenemos que la base canónica de \(\mathbb{R}^{2}\) es \(\vb*{e}_{1} = (1, 0)^{\top}\) y \(\vb*{e}_{2} = (0, 1)^{\top}\), que quiere decir que
+
+        \begin{equation*}
+            \vb*{e}_{1} = \mqty(1 \\ 0) \quad \text{y} \quad \vb*{e}_{2} = \mqty(0 \\ 1).
+        \end{equation*}
+    \end{notation}
 \end{document}
