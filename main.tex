@@ -220,4 +220,74 @@
             \vb*{e}_{1} = \mqty(1 \\ 0) \quad \text{y} \quad \vb*{e}_{2} = \mqty(0 \\ 1).
         \end{equation*}
     \end{notation}
+
+    \subsection{La matriz de una función lineal}
+
+    Una matriz de \(m \cross n\) es un arreglo rectangular (o tabla) de números reales con \(m\) renglones y \(n\) columnas. Si, usando dos subíndices, denotamos con \(a_{ij}\) al número que están en el renglón \(i\) y la columna \(j\), llamado \textcolor{blue}{entrada}, tenemos que una matriz de \(m \cross n\) es
+
+    \begin{equation*}
+        A = \mqty(a_{11} & a_{12} & \cdots & a_{1n}\\
+        a_{21} & a_{22} & \cdots & a_{2n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        a_{m1} & a_{m2} & \cdots & a_{mn}).
+    \end{equation*}
+
+    Podríamos también definirla como un conjunto ordenado de \(n\) vectores en \(\mathbb{R}^{m}\): sus columnas. Es decir, la matriz \(A\) anterior se puede escribir como 
+
+    \begin{equation*}
+        A = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n}), \; \text{donde}\; \vb*{u}_{i} = \mqty(a_{1i}\\ a_{2i}\\ \vdots\\ a_{mi})\in\mathbb{R}^{m},\ i = 1, 2, \dots, n.
+    \end{equation*}
+
+    \begin{obs}
+        A la matriz \(A\) se le asocia la función lineal \(f \colon \mathbb{R}^{n}\to \mathbb{R}^{m}\) que manda al vector canónico \(\vb*{e}_{i} \in \mathbb{R}^{n}\) en su columna i-ésima, es decir, tal que \(f(\vb*{e}_{i}) = \vb*{u}_{i}\) para \(i = 1, 2, \dots, n\).
+    \end{obs}
+
+    A cada función lineal \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\)  se le asocia la matriz \(m \cross n\) que tiene como columnas a sus valores en la base canónica, es decir, se le asocia la matriz
+
+    \begin{equation*}
+        A = (f(\vb*{e}_{1}), f(\vb*{e}_{2}), \dots, f(\vb*{e}_{n})).
+    \end{equation*}
+
+    \begin{exe}
+        A la función lineal de \(\mathbb{R}^{3}\) en \(\mathbb{R}^{3}\) se le asocia la matriz
+
+        \begin{equation*}
+            \mqty(1 & 6 & 2\\
+                2 & 5 & 3\\
+                3 & 4 & 1).
+        \end{equation*}
+    \end{exe}
+
+    \begin{exe}
+        A la transformación ``compadre ortogonal'' de \(\mathbb{R}^{2}\) en \(\mathbb{R}^{2}\) se le asocia la matriz
+        
+        \begin{equation*}
+            \mqty(1 & 0\\
+                0 & 1).
+        \end{equation*}
+    \end{exe}
+
+    Definamos la el \textcolor{red}{producto de una matriz por un vector} para que el resultado sea lo que su función lineal asociada hace al vector. Es decir, si \(A\) es una matriz \(m \cross n\), podrá multiplicar solo a vectores \(x \in \mathbb{R}^{n}\) y el resultado será un vector en \(\mathbb{R}^{m}\). Como ya vimos, \(A\) se puede escribir como \(A = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n})\), donde \(\vb*{u}_{i} \in \mathbb{R}^{m}\), para \(i = 1, 2, \dots, n\); y por su parte, \(x = (x_{1}, x_{2}, \dots, x_{n})^{\top}\). Definamos entonces el \emph{producto} de \(A\) por \(x\) como
+
+    \begin{equation*}
+        A x = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n})\mqty(x_{1} \\ x_{2} \\ \vdots \\ x_{n}) \coloneq x_{1}\vb*{u}_{1} + x_{2}\vb*{u}_{2} + \cdots + x_{n}\vb*{u}_{n}.
+    \end{equation*}
+
+    \begin{theorem}
+        Las funciones lineales de \(\mathbb{R}^{n}\) en \(\mathbb{R}^{m}\) están en correspondencia natural y biunívoca con las matrices de \(m \cross n\), de tal manera que a la función \(f\) le corresponde la matriz \(A\) que cumple
+
+        \begin{equation*}
+            f(x) = Ax
+        \end{equation*}
+
+        para todo \(x \in \mathbb{R}^{n}\).
+    \end{theorem}
+
+    \begin{obs}
+        Cuando \(m = 1\) el producto que acabamos de definir corresponde al producto interior. Es decir, si 
+
+        \begin{equation*}
+            y^{\top} x = y \vdot x.
+        \end{equation*}
+    \end{obs}
 \end{document}
