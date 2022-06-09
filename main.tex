@@ -326,4 +326,16 @@
     \begin{obs}
         Las homotecias tienen la propiedad de conmutar con cualquier otra matriz, pues \(A(kI) = k(AI) = kA = k(IA) = (kI)A\).
     \end{obs}
+
+    \subsubsection*{Matrices de permutaciones}
+
+    Recordemos que una permutación de \(n\) elementos es una función biyectiva \(\rho \colon \Delta_{n} \to \Delta_{n}\), donde podemos tomar \(\Delta_{n} = \left\lbrace 1, 2, \dots, n\right\rbrace\); y que todas estas permutaciones forman el grupo simétrico de orden \(n\), \(S_{n}\), con \(n!\) elementos. Ahora bien, a cada permutación \(\rho \colon \Delta_{n} \to \Delta_{n}\) se le puede asociar la función lineal \(f_{\rho} \colon \mathbb{R}^{n} \to \mathbb{R}^{n}\) definida por \(f_{\rho}(\vb*{e}_{i}) = \vb*{e}_{\rho(i)}\); es decir, \(f_{\rho}\) permuta a los elementos de la base canónica según \(\rho\) y se extiende linealmente a \(\mathbb{R}^{n}\). A la matriz asociada a esta función lineal se le llama la \textcolor{blue}{matriz de la permutación \(\rho\)}; a la que denotaremos como \(A_{\rho}\). 
+
+    \begin{obs}
+        La multiplicación de matrices de permutaciones es de nuevo una matriz de permutación y corresponde a la composición de las permutaciones correspondientes. Es decir, si \(\rho,\ \sigma \in S_{n}\), entonces \(A_{\rho}A_{\sigma} = A_{\rho \circ \sigma}\).
+    \end{obs}
+
+    \begin{obs}
+        El grupo simétrico se puede ver como un ``grupo de matrices''.
+    \end{obs}
 \end{document}
