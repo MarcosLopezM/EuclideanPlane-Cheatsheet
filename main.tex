@@ -372,4 +372,52 @@
     \begin{obs}
         La composición de dos reflexiones es la rotación del doble del ángulo entre sus espejos, \emph{i.e.}, \(E_{\alpha}E_{\beta} = R_{2(\alpha - \beta)}\).
     \end{obs}
+
+    \subsubsection*{Matrices ortogonales (y transpuestas)}
+
+    Decimos que una matriz es \textcolor{red}{ortogonal} si su función lineal asociada es ortogonal. Entonces, podemos considera el grupo de transformaciones \(\vb*{O}(2)\) como un grupo de matrices con la operación de multiplicación.
+
+    Llamemos a una matriz \textcolor{blue}{ortogonal} si es cuadrada, y su función lineal asociada es una transformación ortogonal (que preserva el producto interior). Entonces, si \(A\) es ortogonal, todas sus columnas son vectores unitarios y además por parejas son ortogonales. Dicho más explícitamente, si \(A = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n})\) entonces \(\vb*{u}_{i} )f(\vb*{e}_{i})\) donde \(f\) es su función asociada (\(f(x) = Ax\)), y si \(f \in \vb*{O}(2)\) se cumple que
+
+    \begin{equation*}
+        \vb*{u}_{i} \vdot \vb*{u}_{j} = \vb*{e}_{i} \vdot \vb*{e}_{j} = \delta_{ij} \coloneq \begin{cases}
+            1 & \text{si } i = j \\
+            0 & \text{si } i \neq j,
+        \end{cases}
+    \end{equation*}
+
+    donde \(\delta_{ij}\) es conocida como la \textcolor{blue}{delta de Kroenecker}. En este caso al conjunto ordenado de vectores \(\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n}\) se le llama \textcolor{red}{base ortonormal}. Pero nótese que estos \(n^{2}\) productos interiores son las entradas de la matriz
+
+    \begin{equation*}
+        \mqty({\vb*{u}_{1}}^{\top}\\ {\vb*{u}_{2}}^{\top}\\ \vdots\\ {\vb*{u}_{n}}^{\top})(\vb*{u}_{1}, \vb*{u}_{2}, \cdots, \vb*{u}_{n}) = \mqty(u_{1} \vdot \vb*{u}_{1} & u_{1} \vdot \vb*{u}_{2} & \cdots & u_{1} \vdot \vb*{u}_{n}\\
+        u_{2} \vdot \vb*{u}_{1} & u_{2} \vdot \vb*{u}_{2} & \cdots & u_{2} \vdot \vb*{u}_{n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        u_{n} \vdot \vb*{u}_{1} & u_{n} \vdot \vb*{u}_{2} & \cdots & u_{n} \vdot \vb*{u}_{n}). 
+    \end{equation*}
+
+    \begin{obs}
+        Si llamamos \textcolor{red}{transpuesta} de una matriz a la que se obtiene cambiando columnas por renglones, hemos demostrado que la ``inversa'' de una matriz ortogonal es su transpuesta.
+    \end{obs}
+
+    En general, llamemos la \textcolor{blue}{transpuesta de una matriz}
+
+    \begin{equation*}
+        A = (\vb*{v}_{1}, \vb*{v}_{2}, \dots, \vb*{v}_{n})
+    \end{equation*}
+
+    a la matriz
+
+    \begin{equation*}
+        A^{\top} = \mqty(v_{1}^{\top}\\ v_{2}^{\top}\\ \vdots\\ v_{n}^{\top}),
+    \end{equation*}
+
+    que se obtiene al reflejar las entradas de la diagonal; si \(A\) es \(m \cross n\) entonces \(A^{\top}\) es \(n \cross m\).
+
+    \begin{theorem}
+        Una matriz \(A\) de \(n \cross n\) es ortogonal (la matriz de una transformación ortogonal) si y solo si
+
+        \begin{equation*}
+            A^{\top}A = I.
+        \end{equation*}
+    \end{theorem}
 \end{document}
