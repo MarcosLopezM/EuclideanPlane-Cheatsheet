@@ -290,4 +290,14 @@
             y^{\top} x = y \vdot x.
         \end{equation*}
     \end{obs}
+
+    \subsection{Multiplicación de matrices}
+
+    Vamos ahora a definir la multiplicación de matrices correspondiendo a la composición de funciones lineales.
+
+    Sean \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) y \(g \colon \mathbb{R}^{m} \to \mathbb{R}^{k}\), entonces \(g \circ f \colon \mathbb{R}^{n} \to \mathbb{R}^{k}\) también es lineal. Sean \(A\) la matriz \(m \cross n\) y \(B\) la matriz \(k \cross m\) que corresponden a \(f\) y a \(g\) respectivamente. Definimos el producto \(BA\) como la matriz \(k \cross n\) que corresponde a la función lineal \(g \circ f\) . Es decir, \(BA\) es la única matriz \(k \cross n\) que cumple
+
+    \begin{equation*}
+        (g \circ f)(x) = (BA)x \quad \text{para todo} \quad x \in \mathbb{R}^{n}.
+    \end{equation*}
 \end{document}
