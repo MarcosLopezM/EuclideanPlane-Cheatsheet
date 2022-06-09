@@ -354,4 +354,22 @@
     \begin{obs}
         \(R_{\alpha}R_{\beta} = R_{\alpha + \beta}\).
     \end{obs}
+
+    \subsubsection*{Reflexiones}
+
+    Conviene parametrizar las reflexiones no por el ángulo de la imagen de \(\vb*{e}_{1}\), sino por su mitad, que es el ángulo de la recta-espejo de la reflexión. Pues si, como es natural, a una recta por el origen le asociamos su ángulo (entre \(0\) y \(\pi\)) con el rayo positivo del eje \(x\), entonces la reflexión, \(E_{\theta}\), en la recta con ángulo \(\theta\) manda a \(\vb*{e}_{1}\) en el vector unitario de ángulo \(2\theta\), y por lo tanto la matriz asociada es
+    
+    \begin{equation*}
+        E_{\theta} \coloneq \mqty(\cos 2\theta & \sin 2\theta\\ \sin 2\theta & -\cos 2\theta),
+    \end{equation*}
+
+    pues el segundo vector no es el ``compadre ortogonal'' sino su negativo.
+
+    \begin{obs}
+        Una reflexión es su propia inversa, \emph{i.e.}, \(E_{\theta}E_{\theta} = I\).
+    \end{obs}
+
+    \begin{obs}
+        La composición de dos reflexiones es la rotación del doble del ángulo entre sus espejos, \emph{i.e.}, \(E_{\alpha}E_{\beta} = R_{2(\alpha - \beta)}\).
+    \end{obs}
 \end{document}
