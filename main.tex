@@ -453,4 +453,23 @@
 
         Nótese que si \(A = (\vb*{u}, \vb*{v})\), entonces \(\det(A) = \det(\vb*{u}, \vb*{v})\).
     \end{definicion}
+
+    \begin{theorem}
+        Sea \(A = \mqty(a & b \\ c & d)\), entonces \(A\) es invertible si y solo si \(\det(A) = ad - bc \neq 0\); y en este caso
+
+        \begin{equation*}
+            A^{-1} = \dfrac{1}{det(A)} \mqty(
+                d & -b \\
+                -c & a
+            ).
+        \end{equation*}
+    \end{theorem}
+
+    \begin{lemma}
+        Sean \(A\) y \(B\) matrices \(2 \cross 2\), entonces \(\det(AB) = \det(A)\det(B)\).
+    \end{lemma}
+
+    \begin{theorem}
+        Sea \(A\) una matriz \(2 \cross n\), entonces \(\det(A)\) es el área del paralelogramo definido por sus vectores columna.
+    \end{theorem}
 \end{document}
