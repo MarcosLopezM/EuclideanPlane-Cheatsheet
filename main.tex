@@ -14,6 +14,7 @@
 \usepackage[style=mexican]{csquotes}  % Comillas y otros elementos de citación
 \textwidth 16cm                       % Ancho
 \oddsidemargin -0.0cm                 % Espacio de margen (como es formato de libro, los margenes se 		                                        declaran para páginas pares e impares
+\usepackage{hyperref}
 
 \newtheoremstyle{definicion}% name
 {3pt}% Space above
@@ -487,10 +488,35 @@
 
     \begin{enumerate}[label = Pregunta \arabic*.]
         \item Una función \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) es lineal si y solo si.
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(f(ax) = a f(x)\quad \forall a\in \mathbb{R}, \forall x \in \mathbb{R}^{n}\)}
+            \item \textcolor{blue}{\(f(x + y) = f(x) + f(y)\quad \forall x,\ y \in \mathbb{R}^{n}\)}
+        \end{itemize}
         \item Dada una función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{2}\) y \(u, \ v\) una base ortonormal. La función \(f\) es lineal si y solo si se escribe de la forma \(f(x, y) = xu + yv\).
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{No es necesario que \(u,\ v\) sean base, basta con solo dos vectores.}
+        \end{itemize}
+
         \item ¿Cuál de las siguientes \textcolor{red}{NO} es una función lineal?
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(f(x) = 2x + 1\).}
+        \end{itemize}
+
         \item Elige la opción correcta sobre las funciones lineales.
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{Dada \(f\) función lineal, \(f(0) = 0\).}
+        \end{itemize}
+
         \item El conjunto llamado grupo general lineal de orden \(n\), denotado como \(\bm{GL}(n)\), es el conjunto
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(\left\lbrace A \in \mathcal{M}_{n \cross n} \mid A\ \text{es invertible}\right\rbrace\).}
+        \end{itemize}
+
         \item Dada la función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{3}\) dada por \(f(x, y) = (x, y, x)\), esta tiene una matriz asociada
         
         \begin{equation*}
@@ -500,6 +526,11 @@
                 1 & c
             ).
         \end{equation*}
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(a = 1,\ b = 1,\ c = 0\).}
+        \end{itemize}
+
         \item  Dada la función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{3}\) dada por \(f(x, y) = (2x + y, 2y - x, 3x - y)\), esta tiene una matriz asociada
         
         \begin{equation*}
@@ -509,7 +540,18 @@
                 3 & c
             ).
         \end{equation*}
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(a = 2,\ b = -1,\ c = -1\).}
+        \end{itemize}
+
         \item Dada la función \(f \colon \mathbb{R}^{3} \to \mathbb{R}^{4}\), esta tiene una matriz asociada de
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(3\) columnas.}
+            \item \textcolor{blue}{\(4\) renglones.}
+        \end{itemize}
+
         \item La siguiente matriz 
         
         \begin{equation*}
@@ -520,6 +562,11 @@
         \end{equation*}
 
         es la matriz de rotación de ángulo \(\theta\).
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(a = \cos(\theta),\ b = \sin(\theta)\).}
+        \end{itemize}
+
         \item La siguiente matriz 
         
         \begin{equation*}
@@ -530,6 +577,11 @@
         \end{equation*}
 
         es la matriz de reflexión con respecto a la recta de ángulo \(\theta\).
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(a = \cos(2\theta),\ b = \sin(2\theta)\).}
+        \end{itemize}
+
         \item La siguiente matriz
         
         \begin{equation*}
@@ -540,6 +592,11 @@
         \end{equation*}
 
         es la matriz de rotación de ángulo \(60\).
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(a = 1,\ b = -\sqrt{3},\ c = \sqrt{3},\ d = 1\).}
+        \end{itemize}
+
         \item La siguiente matriz
         
         \begin{equation*}
@@ -550,7 +607,17 @@
         \end{equation*}
 
         es la matriz de permutación \(S_{2}\) que intercambia los elementos de \(\Delta_{2}\).
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(a = 1,\ b = 0,\ c = 0,\ d = 1\).}
+        \end{itemize}
+
         \item Una matriz \(A\) de \(2 \cross 2\) es invertible si y solo si
+        
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{\(\det(A) \neq 0\).}
+        \end{itemize}
+
         \item Sean \(a,\ b \neq 0\). La matriz es invertible
         
         \begin{equation*}
@@ -559,5 +626,9 @@
                 b & a
             ).
         \end{equation*}
+
+        \begin{itemize}[label = \textcolor{green}{\square}]
+            \item \textcolor{blue}{Verdadero.}
+        \end{itemize}
     \end{enumerate}
 \end{document}
