@@ -589,4 +589,34 @@
                 t = \dfrac{\vb*{u}^{\perp} \vdot \vb*{c}}{\vb*{u}^{\perp} \vdot \vb*{v}}, \qquad s = \dfrac{\vb*{v}^{\perp} \vdot \vb*{c}}{\vb*{v}^{\perp} \vdot \vb*{u}}.
             \end{equation*}
         \end{definicion}
+
+        \subsubsection*{La ecuación lineal homogénea}
+
+        Ahora sí, describamos el conjunto de soluciones de la ecuación lineal homogénea:
+
+        \begin{equation*}
+            \vb*{u} \vdot \vb*{x} = 0.
+        \end{equation*}
+
+        \begin{prop}
+            Sea \(\vb*{u} \in \mathbb{R}^{2} - \{0\}\), entonces
+
+            \begin{equation*}
+                \left\lbrace \vb*{x} \in \mathbb{R}^{2} \mid \vb*{u} \vdot \vb*{x} = 0\right\rbrace = \mathcal{L}_{\vb*{u}^{\perp}},
+            \end{equation*}
+
+            donde, recuérdese, \(\mathcal{L}_{\vb*{u}^{\perp}} = \left\lbrace t\vb*{u}^{\perp} \mid t \in \mathbb{R}\right\rbrace\). 
+        \end{prop}
+
+        \begin{definicion}
+            Se dice que dos vectores \(\vb*{u}\) y \(\vb*{v}\) en \(\mathbb{R}^{n}\) son \textcolor{blue}{perpendiculares} u \textcolor{blue}{ortogonales}, lo que se escribe \(\vb*{u} \perp \vb*{v}\), si \(\vb*{u} \vdot \vb*{v} = 0\).
+        \end{definicion}
+
+        \begin{corollary}
+            Sean \(\vb*{u}\) y \(\vb*{v}\) dos vectores no nulos en \(\mathbb{R}^{2}\), entonces
+
+            \begin{equation*}
+                \vb*{u} \parallel \vb*{v}\quad \Leftrightarrow\quad \det(\vb*{u}, \vb*{v}) = \vb*{u}^{\perp} \vdot \vb*{v} = 0.
+            \end{equation*}
+        \end{corollary}
 \end{document}
