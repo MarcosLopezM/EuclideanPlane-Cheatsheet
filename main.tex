@@ -525,4 +525,37 @@
                 \item \(\vb*{u} \vdot \vb*{u} = 0 \Leftrightarrow \vb*{u} = \vb*{0}\)
             \end{enumerate}
         \end{theorem}
+
+        \subsection{El compadre ortogonal}
+
+        El primer uso que le daremos al producto interior será para detectar la perpendicularidad.
+
+        \begin{definicion}
+            El \textcolor{blue}{compadre ortogonal} del vector \(\vb*{u} = (a, b)\), denotado con \(\vb*{u}^{\perp}\) y se lee \(\vb*{u}\)-perpendicular o \(\vb*{u}\)-ortogonal, es
+
+            \begin{equation*}
+                \vb*{u}^{\perp} = (-b, a).
+            \end{equation*}
+
+            (Se intercambian coordenadas y a la primera se le cambia el signo.)
+
+            Se cumple que 
+
+            \begin{equation*}
+                \vb*{u} \vdot \vb*{u}^{\perp} = a(-b) + b(a) = 0.
+            \end{equation*}
+        \end{definicion}
+
+        El ``compadre ortogonal'' pensado como la función de \(\mathbb{R}^{2}\) en \(\mathbb{R}^{2}\) que manda al vector \(\vb*{u}\) en su perpendicular \(\vb*{u}^{\perp}\) (\(\vb*{u} \mapsto \vb*{u}^{\perp}\)), es la rotación de \(90\) grados en sentido contrario a las manecillas del reloj alrededor del origen. Además, es fácil comprobar que \((\vb*{u}^{\perp})^{\perp} = -\vb*{u}\).
+
+        \begin{lemma}
+            Para todos los vectores \(\vb*{u},\ \vb*{v} \in \mathbb{R}^{2}\), y para todo número \(t \in \mathbb{R}\), se cumple que
+
+            \begin{enumerate}[label = \textnormal{\Roman*)}]
+                \item \((\vb*{u} + \vb*{v})^{\perp} = \vb*{u}^{\perp} + \vb*{v}^{\perp}\)
+                \item \((t\vb*{u}^{\perp}) = t\vb*{u}^{\perp}\)
+                \item \(\vb*{u}^{\perp} \vdot \vb*{v}^{\perp} = \vb*{u} \vdot \vb*{v}\)
+                \item \(\vb*{u}^{\perp} \vdot \vb*{v} = -(\vb*{u} \vdot \vb*{v}^{\perp})\)
+            \end{enumerate}
+        \end{lemma}
 \end{document}
