@@ -497,4 +497,32 @@
         \begin{obs}
             Dos rectas se intersectan em un solo punto o no se intersectan o son la misma.
         \end{obs}
+
+        \section{Producto interior}
+
+        \begin{definicion}
+            Dados dos vectores \(\vb*{u} = (u_{1}, u_{2})\) y \(\vb*{v} = (v_{1}, v_{2})\), su \textcolor{blue}{producto interior} (también conocido como producto \textcolor{blue}{escalar} o bien como \textcolor{blue}{producto punto}) es el número real:
+
+            \begin{equation*}
+                \vb*{u} \vdot \vb*{v} = (u_{1}, u_{2}) \vdot (v_{1}, v_{2}) \coloneq u_{1}v_{1} + u_{2}v_{2}.
+            \end{equation*}
+
+            En general, en \(\mathbb{R}^{n}\) se define el \textcolor{blue}{producto interior} (o el \textcolor{blue}{producto punto}) de dos vectores \(\vb*{u} = (u_{1}, \ldots, u_{n})\) y \(\vb*{v} = (v_{1}, \ldots, v_{n})\) como la suma de los productos de sus coordenadas correspondientes, es decir, 
+
+            \begin{equation*}
+                \vb*{u} \vdot \vb*{v} \coloneq u_{1}v_{1} + \cdots + u_{n}v_{n} = \sum_{i = 1}^{n} u_{i}v_{i}.
+            \end{equation*}
+        \end{definicion}
+
+        \begin{theorem}
+            Para todos los vectores \(\vb*{u},\ \vb*{v},\ \vb*{w} \in \mathbb{R}^{n}\), y para todo número \(t \in \mathbb{R}\), se cumple que
+
+            \begin{enumerate}[label = \textnormal{\Roman*)}]
+                \item \(\vb*{u} \vdot \vb*{v} = \vb*{v} \vdot \vb*{u}\)
+                \item \(\vb*{u} \vdot (t\vb*{v}) = t(\vb*{u} \vdot \vb*{v})\)
+                \item \(\vb*{u} \vdot (\vb*{v} + \vb*{w}) = \vb*{u} \vdot \vb*{v} + \vb*{u} \vdot \vb*{w}\)
+                \item \(\vb*{u} \vdot \vb*{u} \geq 0\)
+                \item \(\vb*{u} \vdot \vb*{u} = 0 \Leftrightarrow \vb*{u} = \vb*{0}\)
+            \end{enumerate}
+        \end{theorem}
 \end{document}
