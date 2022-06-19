@@ -16,7 +16,7 @@
 \oddsidemargin -0.0cm                 % Espacio de margen (como es formato de libro, los margenes se 		                                        declaran para páginas pares e impares
 \usepackage[spanish]{todonotes}
 \usepackage{xfrac}
-\usepackage{hyperref}
+\usepackage[unicode=true]{hyperref}
 
 \newtheoremstyle{definicion}% name
 {3pt}% Space above
@@ -103,7 +103,7 @@
 \begin{document}
     \maketitle
 
-    \section{El espacio vectorial \(\mathbb{R}^{2}\)}
+    \section{El espacio vectorial \texorpdfstring{\(\mathbb{R}^{2}\)}{ℝ²}}
 
     En esta sección se introduce la herramienta algebraica básica para hacer geometría con parejas, ternas o \(n\)-adas de números.
 
@@ -235,7 +235,7 @@
 
     Nótese que \(x = s\vb*{p} + t\vb*{q}\) está en el segmento entre \(\vb*{p}\) y \(\vb*{q}\) si y solo si \(t \geq 0\) y \(s \geq 0\). La extensión de la recta más allá de \(\vb*{q}\) tiene coordenadas baricéntricas \(s,\ t\) con \(s < 0\) (y por lo tanto \(t > 1\)); así que los puntos de \(\ell\) fuera del segmento de \(\vb*{p}\) a \(\vb*{q}\) tienen alguna coordenada baricéntrica negativa (la correspondiente al punto más lejano).
 
-    \begin{theorem}
+    \begin{theorem}[De las medianas]
         Dado un triángulo \(\vb*{a},\ \vb*{b}\) y \(\vb*{c}\), sus tres medianas ``concurren'' en un punto que las parte en la proporción \(\frac{2}{3}\) a \(\frac{1}{3}\) (del lado opuesto).
 
         \missingfigure[]{Insertar figura del teorema que se encuentra en la página 38}
@@ -256,4 +256,6 @@
 
         Entonces, de las igualdades se deduce que las tres medianas \emph{concurren} en el punto \(\frac{1}{3}(\vb*{a} + \vb*{b} + \vb*{c})\), es decir, pasan por él. Este punto se llama el \textcolor{blue}{baricentro} del triángulo, y claramente parte a las medias en la proporción deseada. De nuevo, el baricentro corresponde al ``centro de masa'' o ``punto de equilibrio'' del triángulo.
     \end{proof}
+
+    
 \end{document}
