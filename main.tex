@@ -869,4 +869,31 @@
                 \textrm{ang}(\vb{u}, \vb{v}) = \arccos\left(\dfrac{\vb{u} \vdot \vb{v}}{\abs{\vb{u}}\abs{\vb{v}}}\right).
             \end{equation*}
         \end{definicion}
+
+        \section{Distancia}
+
+        Dados dos puntos \(\vb{p},\ \vb{q} \in \mathbb{R}^{n}\) se puede definir su \textcolor{blue}{distancia euclidiana}, o simplemente su \textcolor{blue}{distancia}, \(\textrm{d}(\vb{p}, \vb{q})\), como la norma de su diferencia, es decir, como la magnitud del vector que lleva a uno en otro, \emph{i.e.}, 
+
+        \begin{equation*}
+            \textrm{d}(\vb{p}, \vb{q}) = \abs{\vb{p} - \vb{q}},
+        \end{equation*}
+
+        que explícitamente en coordenadas da la fórmula:
+
+        \begin{equation*}
+            \textrm{d}((x_{1}, y_{1}), (x_{2}, y_{2})) = \sqrt{(x_{1} - x_{2})^2 + (y_{1} - y_{2})^2}.
+        \end{equation*}
+
+        Las propiedades básicas se reúnen en el siguiente:
+
+        \begin{theorem}
+            Para todos los vectores \(\vb{u},\ \vb{v},\ \vb{z} \in \mathbb{R}^{n}\) se cumple que
+
+            \begin{enumerate}[label = \textnormal{\Roman*)}]
+                \item \(\textrm{d}(\vb{x}, \vb{y}) \geq 0\)
+                \item \(\textrm{d}(\vb{x}, \vb{y}) = 0 \Leftrightarrow \vb{u} = \vb{y}\)
+                \item \(\textrm{d}(\vb{u}, \vb{v}) = \textrm{d}(\vb{v}, \vb{u})\)
+                \item \(\textrm{d}(\vb{x}, \vb{y}) \leq \textrm{d}(\vb{x}, \vb{z}) + \textrm{d}(\vb{z}, \vb{y})\).
+            \end{enumerate}
+        \end{theorem}
 \end{document}
