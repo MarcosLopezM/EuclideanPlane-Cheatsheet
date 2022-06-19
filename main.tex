@@ -701,4 +701,39 @@
         \begin{theorem}
             Dada una recta \(\ell\) y un punto \(\vb*{p}\) fuera de ella en el plano, existe una única recta \(\ell^{\prime}\) que pasa por \(\vb*{p}\) y no se intersecta con \(\ell\).
         \end{theorem}
+
+        \subsection{Teoremas de concurrencia}
+
+        En esta sección, aplicamos la ecuación de las rectas para demostrar uno de los teoremas clásicos de concurrencia de líneas.
+
+        La \emph{altura} de un triángulo es la recta que pasa por uno de sus vértices y es ortogonal al lado opuesto.
+
+        \begin{theorem}
+            Las alturas dde un triángulo son concurrentes.
+        \end{theorem}
+
+        \begin{proof}
+            Dado un triángulo con vértices \(\vb*{a},\ \vb*{b},\ \vb*{c}\), tenemos que la altura por el vértice \(\vb*{a}\), llamémosla \(\eta_{\vb*{a}}\), está definida por
+
+            \begin{equation*}
+                \eta_{\vb*{a}} \colon\quad (\vb*{c} - \vb*{b}) \vdot \vb*{x} = (\vb*{c} - \vb*{b}) \vdot \vb*{a},
+            \end{equation*}
+            
+            pues es ortogonal al lado que pasa por \(\vb*{b}\) y \(\vb*{c}\), que tienen dirección \((\vb*{c} - \vb*{b})\), y pasa por el punto \(\vb*{a}\). Análogamente:
+
+            \begin{align*}
+                \eta_{\vb*{b}} \colon\quad (\vb*{a} - \vb*{c}) \vdot \vb*{x} &= (\vb*{a} - \vb*{c}) \vdot \vb*{b},\\
+                \eta_{\vb*{c}} \colon\quad (\vb*{b} - \vb*{a}) \vdot \vb*{x} &= (\vb*{b} - \vb*{a}) \vdot \vb*{c}.
+            \end{align*}
+
+            Obsérvese ahora que la suma (lado a lado) de dos de estas ecuaciones da precisamente el negativo de la tercera. Por ejemplo, sumando las dos primeras obtenemos
+
+            \begin{align*}
+                (\vb*{c} - \vb*{b}) \vdot \vb*{x} + (\vb*{a} - \vb*{c}) \vdot \vb*{x} &= (\vb*{c} - \vb*{b}) \vdot \vb*{a} + (\vb*{a} - \vb*{c}) \vdot \vb*{b},\\
+                (\vb*{c} - \vb*{b} + \vb*{a} - \vb*{c}) \vdot \vb*{x} &= \vb*{c} \vdot \vb*{a} - \vb*{b} \vdot \vb*{a} + \vb*{a} \vdot \vb*{b} - \vb*{c} \vdot \vb*{b},\\
+                (\vb*{a} - \vb*{b}) \vdot \vb*{x} &= (\vb*{a} - \vb*{b}) \vdot \vb*{c}.
+            \end{align*}
+
+            Así que si \(\vb*{x} \in \eta_{\vb*{a}} \cap \eta_{\vb*{b}}\), entonces cumple las dos primeras ecuaciones y por tanto cumple su suma que es ``menos'' la ecuación de \(\eta_{\vb*{c}}\), y entonces \(\vb*{c} \in \eta_{\vb*{c}}\). Así que las tres rectas pasan por el mismo punto.
+        \end{proof}
 \end{document}
