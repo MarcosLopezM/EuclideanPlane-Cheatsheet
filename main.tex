@@ -257,5 +257,116 @@
         Entonces, de las igualdades se deduce que las tres medianas \emph{concurren} en el punto \(\frac{1}{3}(\vb*{a} + \vb*{b} + \vb*{c})\), es decir, pasan por él. Este punto se llama el \textcolor{blue}{baricentro} del triángulo, y claramente parte a las medias en la proporción deseada. De nuevo, el baricentro corresponde al ``centro de masa'' o ``punto de equilibrio'' del triángulo.
     \end{proof}
 
+    \subsection{Planos en el espacio I}
+
+    % En el teorema de las medianas se usó una idea que nos sirve para definir planos en el espacio. Dados tres puntos \(\vb*{a},\ \vb*{b}\) y \(\vb*{c}\) en \(\mathbb{R}^{3}\), ya sabemos describir las tres líneas entre ellos; supongamos que son distintas. Entonces podemos tomar nuevos puntos en alguna de ellas y de estos las nuevas líneas que los unen al vértice restante. Está claro que la unión de todas estas líneas debe ser el plano que pasa por \(\vb*{a},\ \vb*{b}\) y \(\vb*{c}\).
+
+    % Un punto \(y\) en la línea que pasa por \(\vb*{a}\) y \(\vb*{b}\) se escribe como
+
+    % \begin{equation*}
+    %     y = s\vb*{a} + t\vb*{b}\quad \text{con}\quad s + t = 1.
+    % \end{equation*}
+
+    % Y un punto \(x\) en la línea que pasa por \(y\) y \(\vb*{c}\) se escribe entonces como
+
+    % \begin{equation*}
+    %     x = r(s\vb*{a} + t\vb*{b}) + (1 - t)\vb*{c},
+    % \end{equation*}
+
+    % para algún \(r \in \mathbb{R}\); que es lo mismo que
+
+    % \begin{equation*}
+    %     x = (rs)\vb*{a} + (rt)\vb*{b} + (1 - t)\vb*{c}.
+    % \end{equation*}
+
+    % \missingfigure[]{Insertar figura correspondiente a la introducción de la subsección en la página 39}
+
+    % Observemos que los tres coeficientes suman uno:
+
+    % \begin{equation*}
+    %     (rs) + (rt) + (1 - r) = r(s + t) + 1 - r = r(1) + 1 - r = 1.
+    % \end{equation*}
+
+    % Demostraremos que está en una línea por uno de los vértices y un punto en la línea que pasa por los otros dos.
+    % Sean \(\alpha,\ \beta,\ \gamma \in \mathbb{R}\) tales que \(\alpha + \beta + \gamma = 1\). Consideremos el punto
+
+    % \begin{equation*}
+    %     x = \alpha\vb*{a} + \beta\vb*{b} + \gamma\vb*{c}.
+    % \end{equation*}
+
+    % Como alguno de los coeficientes es distinto de \(1\), podemos suponer sin pérdida de generalidad que \(\alpha \neq 1\). Entonces podemos dividir entre \(1 - \alpha\) y se tiene
     
+    % \begin{equation*}
+    %     x = \alpha\vb*{a} + (1 - \alpha)\left(\dfrac{\beta}{1 - \alpha}\vb*{b} + \dfrac{\gamma}{1 - \alpha}\vb*{c}\right),
+    % \end{equation*}
+
+    % así que \(x\) está en la recta que pasa por \(\vb*{a}\) y el punto
+
+    % \begin{equation*}
+    %     y = \dfrac{\beta}{1 - \alpha}\vb*{b} + \dfrac{\gamma}{1 - \alpha}\vb*{c}.
+    % \end{equation*}
+
+    % Como \(\alpha + \beta + \gamma = 1\), entonces \(\beta + \gamma = 1 - \alpha\), y los coeficientes de esta última expresión suman uno. Por lo tanto \(y\) está en la recta que pasa por \(\vb*{b}\) y \(\vb*{c}\).
+
+    \begin{definicion}
+        Dados tres puntos \(\vb*{a},\ \vb*{b}\) y \(\vb*{c}\) en \(\mathbb{R}^{3}\) no colineales (es decir, que no estén en una misma línea), el \textcolor{blue}{plano afín} que pasa por ellos es el conjunto
+
+        \begin{equation*}
+            \Pi = \left\lbrace \alpha\vb*{a} + \beta\vb*{b} + \gamma\vb*{c} \mid \alpha, \beta, \gamma \in \mathbb{R}; \alpha + \beta + \gamma = 1\right\rbrace.
+        \end{equation*}
+    \end{definicion}
+
+    \begin{obs}
+        A una expresión de la forma \(\alpha\vb*{a} + \beta\vb*{b} + \gamma\vb*{c}\) con \(\alpha + \beta + \gamma = 1\) la llamaremos \textcolor{blue}{combinación afín} (o \textcolor{blue}{baricéntrica}) de los puntos \(\vb*{a},\ \vb*{b}\) y \(\vb*{c}\) y los coeficientes \(\alpha,\ \beta,\ \gamma\), las \textcolor{blue}{coordenadas baricéntricas} del punto \(\alpha\vb*{a} + \beta\vb*{b} + \gamma\vb*{c}\). 
+    \end{obs}
+
+    \subsubsection*{Definición lineal}
+
+    La recta que genera un vector \(\vb*{u} \neq \vb*{0}\) es el conjunto de todos sus ``alargamientos'' \(\mathcal{L}_{\vb*{u}} = \left\lbrace s\vb*{u} \mid s \in \mathbb{R}\right\rbrace\). Si ahora tomamos un nuevo vector \(\vb*{v}\) que no esté en \(\mathcal{L}_{\vb*{u}}\), tenemos una nueva recta \(\mathcal{L}_{\vb*{v}} = \left\lbrace t\vb*{v} \mid t \in \mathbb{R}\right\rbrace\) que intersecta a la anterior solo en el origen. Estas dos rectas generan un plano que consiste en todos los puntos a los cuales se pueden llegar desde el origen moviéndose únicamente en las direcciones \(\vb*{u}\) y \(\vb*{v}\). Este plano que pasa por el origen claramente se describe con dos parámetros independientes:
+
+    \begin{equation*}
+        \Pi_{0} = \left\lbrace s\vb*{u} + t\vb*{v} \mid s, t \in \mathbb{R}\right\rbrace.
+    \end{equation*}
+
+    \missingfigure[]{Insertar figura correspondiente a la idea intuitiva de la defininción lineal del plano que se puede encotrar en la página 41.}
+
+    \begin{definicion}
+        Un \textcolor{blue}{plano} en \(\mathbb{R}^{3}\) es un conjunto de la forma
+
+        \begin{equation*}
+            \Pi = \left\lbrace \vb*{p} + s\vb{u} + t\vb*{v} \mid s, t \in \mathbb{R}\right\rbrace,
+        \end{equation*}
+
+        donde \(\vb*{u}\) y \(\vb*{v}\) son vectores no nulos tales que \(\mathcal{L}_{\vb*{u}} \cap \mathcal{L}_{\vb*{v}} = \left\lbrace \vb*{0}\right\rbrace\) y \(\vb*{p}\) es cualquier punto. A esta manera de describir un plano la llamaremos \textcolor{blue}{expresión paramétrica}; a \(\vb*{u}\) y \(\vb*{v}\) se les llama \textcolor{blue}{vectores direccionales} del plano \(\Pi\) y a \(\vb*{p}\) el \textcolor{blue}{punto base} de la expresión paramétrica.
+    \end{definicion}
+
+    \begin{lemma}
+        Todo plano en \(\mathbb{R}^{3}\) es un plano afín y viceversa.
+    \end{lemma}
+
+    \subsubsection*{Terminología y notación}
+
+    Antes de seguir adelante, conviene establecer cierta \emph{terminología} y \emph{notación} para cosas, nociones y expresiones que estamos usando mucho:
+
+    \begin{itemize}[label = \textbullet]
+        \item Dados los vectores \(\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{k}\) en \(\mathbb{R}^{n}\), a una expresión de la forma
+        
+        \begin{equation*}
+            s_{1}\vb*{u}_{1} + s_{2}\vb*{u}_{2} + \dots + s_{k}\vb*{u}_{k},
+        \end{equation*}
+
+        donde \(s_{1}, s_{2}, \dots, s_{k}\) son números reales, se le llama una \textcolor{blue}{combinación lineal} de los vectores \(\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{k}\) con \textcolor{blue}{coeficientes} \(s_{1}, s_{2}, \dots, s_{k}\).
+
+        \item A una combinación lineal cuyos coeficientes suman \(1\) se le llama \textcolor{blue}{combinación afín}. Y a una combinación afín de dos vectores distintos o de tres no colineales se le llama, además, \textcolor{blue}{baricéntrica}.
+        
+        \item Al conjunto de todas las combinaciones lineales de los vectores \(\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{k}\) se le llama el \textcolor{blue}{subespacio generado} por ellos y se le denotará \(\left\langle \vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{k}\right\rangle\). Es decir, 
+        
+        \begin{equation*}
+            \left\langle \vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{k}\right\rangle \coloneq \left\lbrace s_{1}\vb*{u}_{1} + s_{2}\vb*{u}_{2} + \dots + s_{k}\vb*{u}_{k} \mid s_{1}, s_{2}, \dots, s_{k} \in \mathbb{R}\right\rbrace.
+        \end{equation*}
+
+        Nótese que entonces, si \(\vb*{u} \neq \vb*{0}\) se tiene que \(\mathcal{L}_{\vb*{u}} = \left\langle\vb*{u}\right\rangle\) es la recta generada por \(\vb*{u}\); y ambas notaciones se seguirán usando indistintamente. Aunque ahora \(\left\langle\vb*{u}\right\rangle\) tiene sentido para \(\vb*{u} = \vb*{0}\), en cuyo caso \(\left\langle\vb*{u}\right\rangle = \left\langle 0 \right\rbrace\), y \(\mathcal{L}_{\vb*{u}}\) se usará para destacar que es una recta.
+
+        \item Se dice que dos vectores \(\vb*{u}\) y\(\vb*{v}\) son \textcolor{blue}{linealmente independientes} si son no nulos y tales que \(\mathcal{L}_{\vb*{u}} \cap \mathcal{L}_{\vb*{v}} = \left\lbrace 0\right\rbrace\).
+        \end{itemize}
 \end{document}
