@@ -736,4 +736,50 @@
 
             Así que si \(\vb*{x} \in \eta_{\vb*{a}} \cap \eta_{\vb*{b}}\), entonces cumple las dos primeras ecuaciones y por tanto cumple su suma que es ``menos'' la ecuación de \(\eta_{\vb*{c}}\), y entonces \(\vb*{c} \in \eta_{\vb*{c}}\). Así que las tres rectas pasan por el mismo punto.
         \end{proof}
+
+        \section{Norma y ángulos}
+
+        Del producto interior, obtendremos la noción de \textcolor{blue}{norma} o \textcolor{blue}{magnitud} de los vectores, que corresponde a la \textcolor{blue}{distancia} del punto al origen.
+
+        \begin{definicion}
+            Dado un vector \(\vb*{v} \in \mathbb{R}^{n}\), su \textcolor{blue}{norma} (o \textcolor{blue}{magnitud}) es el número real:
+
+            \begin{equation*}
+                \abs{\vb*{v}} = \sqrt{\vb*{v} \vdot \vb*{v}},
+            \end{equation*}
+
+            de tal manera que la norma es una función de \(\mathbb{R}^{n}\) en \(\mathbb{R}\).
+        \end{definicion}
+
+        \begin{obs}
+            \(\abs{\vb*{v}}^{2} = \vb*{v} \vdot \vb*{v}\).
+        \end{obs}
+
+        \begin{obs}
+            En \(\mathbb{R}^{2}\) la norma se escribe, con coordenadas \(\vb*{v} = (x, y)\), como
+
+            \begin{equation*}
+                \abs{\vb*{v}}^{2} = x^{2} + y^{2}.
+            \end{equation*}
+        \end{obs}
+
+        \begin{theorem}[Pitágoras vectorial]
+            Sean \(\vb*{u}\) y \(\vb*{v}\) dos vectores en \(\mathbb{R}^{n}\). Entonces son perpendiculares si y solo si
+
+            \begin{equation*}
+                \abs{\vb*{u}}^{2} + \abs{\vb*{v}}^{2} = \abs{\vb*{u} - \vb*{v}}^{2}.
+            \end{equation*}
+        \end{theorem}
+
+        \begin{theorem}
+            Para todos los vectores \(\vb*{u},\ \vb*{v} \in \mathbb{R}^{n}\) y para todo número real \(t \in \mathbb{R}\) se tiene que:
+
+            \begin{enumerate}[label = \textnormal{\Roman*)}]
+                \item \(\abs{\vb*{v}} \geq 0\)
+                \item \(\abs{\vb*{v}} = 0 \Leftrightarrow \vb*{v} = \vb*{0}\)
+                \item \(\abs{t\vb*{v}} = \abs{t}\abs{\vb*{v}}\)
+                \item \(\abs{\vb*{u}} + \abs{\vb*{v}} \geq \abs{\vb*{u} + \vb*{v}}\)
+                \item \(\abs{\vb*{u}}\abs{\vb*{v}} \geq \abs{\vb*{u} \vdot \vb*{v}}\)
+            \end{enumerate}
+        \end{theorem}
 \end{document}
