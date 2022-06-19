@@ -369,4 +369,43 @@
 
         \item Se dice que dos vectores \(\vb*{u}\) y\(\vb*{v}\) son \textcolor{blue}{linealmente independientes} si son no nulos y tales que \(\mathcal{L}_{\vb*{u}} \cap \mathcal{L}_{\vb*{v}} = \left\lbrace 0\right\rbrace\).
         \end{itemize}
+
+        \section{Medio quinto}
+
+        Hay una definición conjuntista de rectas paralelas, así que formalicémosla. Como las rectas son, por definición, ciertos subconjuntos distinguidos del plano, tiene sentido lo siguiente:
+
+        \begin{definicion}
+            Dos rectas \(\ell_{1}\) y \(\ell_{2}\) en \(\mathbb{R}^{2}\) son \textcolor{blue}{paralelas}, lo que escribiremos \(\ell_{1} \parallel \ell_{2}\), si no se intersectan; es decir, si
+
+            \begin{equation*}
+                \ell_{1} \cap \ell_{2} \neq \emptyset,
+            \end{equation*}
+
+            donde \(\emptyset\) denota al conjunto vacío.
+        \end{definicion}
+
+
+        Pero además de rectas tenemos algo más elemental que son los vectores (segmentos dirigidos) y entre ellos también hay una noción intuitiva de paralelismo que corresponde al ``alargamiento'' o multiplicación por escalares.
+
+        \begin{definicion}
+            Dados dos vectores \(\vb*{u}, \vb*{v} \in \mathbb{R}^{2}\) distintos de \(\vb*{0}\), diremos que \(\vb*{u}\) es \textcolor{blue}{paralelo} a \(\vb*{v}\), lo que escribiremos \(\vb*{u} \parallel \vb*{v}\), si existe un número \(t \in \mathbb{R}\) tal que \(\vb*{u} = t \vb*{v}\).
+        \end{definicion}
+
+        Con la noción de paralelismo de vectores, podemos determinar cuándo un punto está en una recta.
+
+        \begin{lemma}
+            Sea \(\ell\) la recta que pasa por \(\vb*{p}\) con dirección \(\vb*{d} (\vb*{d} \neq \vb*{0})\), y sea \(\vb*{q} \neq \vb*{p}\), entonces
+
+            \begin{equation*}
+                \vb*{q} \in \ell \Longleftrightarrow (\vb*{q} - \vb*{p}) \parallel \vb*{d}.
+            \end{equation*}
+        \end{lemma}
+
+        \begin{theorem}[\(\frac{1}{2}\) Quinto]
+            Sean \(\ell\) una recta en \(\mathbb{R}^{2}\) y \(\vb*{q}\) un punto fuera de ella. Entonces existe una recta \(\ell^{\prime}\) que pasa por \(\vb*{q}\) y es paralela a \(\ell\).
+        \end{theorem}
+
+        \begin{definicion}
+            Dos rectas \(\ell_{1}\) y \(\ell_{2}\) son \textcolor{blue}{paralelas}, lo que escribiremos \(\ell_{1} \parallel \ell_{2}\), si tienen vectores direccionales paralelos.
+        \end{definicion}
 \end{document}
