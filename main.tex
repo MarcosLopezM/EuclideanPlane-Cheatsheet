@@ -619,4 +619,50 @@
                 \vb*{u} \parallel \vb*{v}\quad \Leftrightarrow\quad \det(\vb*{u}, \vb*{v}) = \vb*{u}^{\perp} \vdot \vb*{v} = 0.
             \end{equation*}
         \end{corollary}
+
+        \section{La ecuación normal de la recta}
+
+        Demostraremos ahora que todas las rectas de \(\mathbb{R}^{2}\) se pueden describir con una ecuación
+
+        \begin{equation*}
+            \vb*{u} \vdot \vb*{x} = c,
+        \end{equation*}
+
+        donde \(\vb*{u} \in \mathbb{R}^{2}\) es un vector normal a la recta y la constante \(c \in \mathbb{R}\) se escoge apropiadamente.
+        
+        Tomemos una recta con dirección \(\vb*{d} \neq \vb*{0}\):
+
+        \begin{equation*}
+            \ell = \left\lbrace\vb*{p} + t\vb*{d} \mid t \in \mathbb{R}\right\rbrace.
+        \end{equation*}
+
+        Si definimos \(\vb*{u} \coloneq \vb*{d}^{\perp}\) y \(c \coloneq \vb*{u} \vdot \vb*{p}\), afirmamos, es decir, demostraremos, que
+
+        \begin{equation*}
+            \ell = \left\lbrace\vb*{x} \in \mathbb{R}^{2} \mid \vb*{u} \vdot \vb*{x} = c\right\rbrace.
+        \end{equation*}
+
+        \begin{theorem}
+            Sea \(\ell = \left\lbrace\vb*{p} + t\vb*{d} \mid t \in \mathbb{R}\right\rbrace\) una recta en \(\mathbb{R}^{2}\). Entonces \(\ell\) consta de los vectores \(\vb*{x} \in \mathbb{R}^{2}\) que cumplen la ecuación \(\vb*{u} \vdot \vb*{x} = c\), que escribimos
+
+            \begin{equation*}
+                \ell \colon \quad \vb*{u} \vdot \vb*{x} = c, \quad \text{donde}\quad \vb*{u} = \vb*{d}^{\perp}\quad \text{y}\quad c = \vb*{u} \vdot \vb*{p}.
+            \end{equation*}
+        \end{theorem}
+
+        \begin{theorem}
+            Sea \(\vb*{d} \in \mathbb{R}^{2}-\{\vb*{0}\}\), entonces
+
+            \begin{equation*}
+                \left\lbrace\vb*{p} + t\vb*{d} \mid t \in \mathbb{R}\right\rbrace = \left\lbrace\vb*{x} \in \mathbb{R}^{2} \mid \vb*{d}^{\perp} \vdot \vb*{x} = \vb*{d}^{\perp} \vdot \vb*{p}\right\rbrace.
+            \end{equation*}
+        \end{theorem}
+
+        Para encontrar una representación paramétrica de la recta \(\ell\) dada por una \textcolor{blue}{ecuación normal}
+
+        \begin{equation*}
+            \ell \colon \quad \vb*{u} \vdot \vb*{x} = c,
+        \end{equation*}
+
+        bastará con encontrar una solución particular \(\vb*{p}\), pues sabemos que la dirección es \(\vb*{u}^{\perp}\).
 \end{document}
