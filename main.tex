@@ -95,6 +95,7 @@
 \setlength{\parskip}{0.5em}           % Espacio entre párrafos
 
 \graphicspath{{./img}}
+\DeclareMathOperator*{\ang}{\overrightarrow{\textrm{ang}}}
 
 \title{\Huge{El plano euclidio}}
 \author{Geometría Analítica I}
@@ -790,4 +791,24 @@
         \begin{equation*}
             \mathbb{S}^{n} = \left\lbrace \vb*{x} \in \mathbb{R}^{n + 1} \mid \abs{\vb*{x}} = 1 \right\rbrace.
         \end{equation*}
+
+        \subsection{Ángulo entre vectores}
+
+        Podemos usar coordenadas polares para definir un ángulo entre vectores en general.
+
+        \begin{definicion}
+            Dados \(\vb*{x}\) y \(\vb*{y}\), dos vectores no nulo en \(\mathbb{R}^{2}\), sean \((\alpha, \abs{\vb*{x}})\) y \((\beta, \abs{\vb*{y}})\) sus coordenadas polares respectivamente. El \textcolor{blue}{ángulo de} \(\vb*{x}\) a \(\vb*{y}\), es
+
+            \begin{equation*}
+                \ang(\vb*{x}, \vb*{y}) = \beta - \alpha.
+            \end{equation*}
+        \end{definicion}
+
+        Obsérvese que el ángulo tiene dirección, ya que claramente
+
+        \begin{equation*}
+            \ang(\vb*{x}, \vb*{y}) = - \ang(\vb*{y}, \vb*{x}),
+        \end{equation*}
+
+        pues \(\ang(\vb*{x}, \vb*{y})\) corresponde al movimiento angular que nos lleva en la dirección de \(\vb*{x}\) a \(\vb*{y}\), y \(\ang(\vb*{y}, \vb*{x})\) es justo el movimiento inverso.
 \end{document}
