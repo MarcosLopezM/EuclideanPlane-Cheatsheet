@@ -408,4 +408,65 @@
         \begin{definicion}
             Dos rectas \(\ell_{1}\) y \(\ell_{2}\) son \textcolor{blue}{paralelas}, lo que escribiremos \(\ell_{1} \parallel \ell_{2}\), si tienen vectores direccionales paralelos.
         \end{definicion}
+
+        \section{Intersección de rectas I}
+
+        Es esta sección se analiza el problema de encontrar la intersección de do rectas. De nuevo, sabemos por experiencia e intuición que dos rectas no paralelas se deben intersectar en un punto. 
+
+        Sean 
+
+        \begin{equation*}
+            \ell_{1} = \left\lbrace (0, 1) + t(1, 2) \mid t \in \mathbb{R}\right\rbrace,\qquad \ell_{2} = \left\lbrace (3, 4) + s(2, 1) \mid s \in \mathbb{R}\right\rbrace.
+        \end{equation*}
+
+        La intersección de estas dos rectas \(\ell_{1} \cap \ell_{2}\) es el punto que cumple con las dos descripciones. Es decir, buscamos una \(t \in \mathbb{R}\) y una \(s \in \mathbb{R}\) que satisfagan 
+
+        \begin{equation*}
+            (0, 1) + t(1, 2) = (3, 4) + s(2, 1).
+        \end{equation*}
+
+        Esta ecuación vectorial puede reescribirse como
+
+        \begin{equation*}
+            t(1, 2) - s(2, 1) = (3, 4) - (0, 1), \quad (t -2s, 2t - s) = (3, 3),
+        \end{equation*}
+
+        que nos da, en cada coordenada, una ecuación lineal con dos incógnitas. Es decir, debemos resolver el sistema:
+        
+        \begin{align*}
+            t - 2s &= 3 \\
+            2t - s &= 3.
+        \end{align*}
+
+        Si despejamos \(t\) en la primera ecuación, se obtiene \(t = 3 + 2s\). Y al sustituir en la segunda obtenemos la ecuación lineal en la variable \(s\):
+
+        \begin{equation*}
+            2(3 + 2s) - s = 3,
+        \end{equation*}
+
+        que se puede resolver directamente:
+
+        \begin{equation*}
+            6 + 4s - s = 3, \quad 3s = -3, \quad s = -1.
+        \end{equation*}
+
+        Y por lo tanto, al sustituir este valor de \(s\) en la descripción de la recta \(\ell_{2}\), el punto
+
+        \begin{equation*}
+            (3, 4) - (2, 1) = (1, 3)
+        \end{equation*}
+
+        está en las dos rectas. Nótese que bastó con encontrar el valor de un solo parámetro, pues de la correspondiente descripción paramétrica se obtiene el punto deseado.
+
+        Que en este problema particular aparezca un sistema de ecuaciones no es casualidad, pues en general encontrar la intersección de rectas se tiene que resolver así. Ya que si tenemos dos rectas cualesquiera en \(\mathbb{R}^{2}\):
+
+        \begin{equation*}
+            \ell_{1} = \left\lbrace\vb*{p} + t\vb*{v} \mid t \in \mathbb{R}\right\rbrace, \quad \ell_{2} = \left\lbrace\vb*{q} + s\vb*{u} \mid s \in \mathbb{R}\right\rbrace.
+        \end{equation*}
+
+        Su intersección	 está dada por la \(t\) y la \(s\) que cumplen
+
+        \begin{equation*}
+            \vb*{p} + t\vb*{v} = \vb*{q} + s\vb*{u} \Longleftrightarrow t\vb*{v} - s\vb*{u} = \vb*{q} - \vb*{p}.
+        \end{equation*}
 \end{document}
