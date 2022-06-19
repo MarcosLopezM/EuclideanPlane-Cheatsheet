@@ -14,6 +14,7 @@
 \usepackage[style=mexican]{csquotes}  % Comillas y otros elementos de citación
 \textwidth 16cm                       % Ancho
 \oddsidemargin -0.0cm                 % Espacio de margen (como es formato de libro, los margenes se 		                                        declaran para páginas pares e impares
+\usepackage[spanish]{todonotes}
 \usepackage{hyperref}
 
 \newtheoremstyle{definicion}% name
@@ -92,543 +93,63 @@
 \setlength{\parindent}{2em}           % Sangría
 \setlength{\parskip}{0.5em}           % Espacio entre párrafos
 
-\title{\Huge{Funciones lineales}}
+\title{\Huge{El plano euclidio}}
 \author{Geometría Analítica I}
 \date{\today}
 
 \begin{document}
     \maketitle
 
-    Hemos visto que las transformaciones ortogonales de \(\mathbb{R}^{2}\) quedan determinadas por lo que le hacen a la base canónica; es decir, que se escriben
+    \section{El espacio vectorial \(\mathbb{R}^{2}\)}
 
-    \begin{equation*}
-        f(x, y) = x\vb*{u} + y\vb*{v},
-    \end{equation*}
-
-    donde \(\vb*{u}\) y \(\vb*{v}\) son vectores fijos (\(\vb*{u} = f(\vb*{e}_{1})\) y \(\vb*{v} = f(\vb*{e}_{2})\)); y además, vimos que si la función es ortogonal entonces \(\vb*{u}\) y \(\vb*{v}\) \textcolor{red}{forman una base ortonormal}. Pero si en esta fórmula no pedimos nada a \(\vb*{u}\) y a \(\vb*{v}\), simplemente que sean vectores cualesquiera en \(\mathbb{R}^{2}\), obtenemos una familia de funciones mucho más grande: las \textcolor{blue}{lineales} de \(\mathbb{R}^{2}\) en \(\mathbb{R}^{2}\).
+    En esta sección se introduce la herramienta algebraica básica para hacer geometría con parejas, ternas o \(n\)-adas de números.
 
     \begin{definicion}
-        Una función \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) es \textcolor{blue}{lineal} si para todos los vectores \(x,\ y\in \mathbb{R}^{n}\) y todo número \(t\in\mathbb{R}\) se cumple que:
+        Dados dos vectores \(\vb*{u} = (x, y)\) y \(\vb{v} = (x^{\prime}, y^{\prime})\) en \(\mathbb{R}^{2}\), definimos su \textcolor{blue}{suma vectorial}, o simplemente suma, como el vector \(\vb*{u} + \vb*{v}\) que resulta de sumar componente a componente:
 
-        \begin{enumerate}[label = \Roman*)]
-            \item \(f(x + y) = f(x) + f(y)\)
-            \item \(f(tx) = tf(x)\).
+        \begin{equation*}
+            \vb*{u} + \vb*{v} \coloneq (x + x^{\prime}, y + y^{\prime}).
+        \end{equation*}
+
+        Nótese que en cada coordenada, la suma que se usa es la suma usual de números reales.
+    \end{definicion}
+
+    La suma vectorial corresponde geométricamente a la regla del paralelogramo usada para encontrar la resultante de dos vectores. Esto es, se consideran los vectores como segmentos dirigidos que salen del origen y generan entonces un paralelogramo, y el vector que va del origen a la otra esquina es la suma.
+    
+    \missingfigure[figheight=3cm]{Insertar imagen del método del paralelogramo}
+
+    \begin{definicion}
+        Dados un vector \(\vb*{u} = (x, y) \in \mathbb{R}^{2}\) y un número \(t \in \mathbb{R}\) se define la \textcolor{blue}{multiplicación escalar} \(t \vb*{u}\) como el vector que resulta de multiplicar cada componente del vector por el número:
+
+        \begin{equation*}
+            t \vb*{u} \coloneq (t x, t y).
+        \end{equation*}
+
+        Nótese que en cada coordenada la multiplicación que se usa es de los números reales.
+    \end{definicion}
+
+    \begin{obs}
+        Notemos que \(t \vb*{u}\) para \(t > 1\) es, estrictamente hablando, una \textcolor{blue}{dilatación} de \(\vb*{u}\), y para \(0 < t < 1\), una \textcolor{blue}{contracción} del mismo. Además, para \(t < 0\), \(t \vb*{u}\) apunta en la dirección contraria, ya que, en particular, \((-1) \vb*{u} \eqqcolon - \vb*{u}\) es el vector que, como segmento dirigido, va del punto \(\vb*{u}\) al \(\vb*{0}\) y el resto se obtiene como dilataciones o contracciones de \(- \vb*{u}\).
+    \end{obs}
+
+    Las propiedades básicas de la suma vectorial y la multiplicación escalar se reúnen en el siguiente teorema, donde el vector \(\vb*{0} = (0, \dots, 0)\) es el llamado \textcolor{blue}{vector cero} que corresponde al origen, y, para cada \(x \in \mathbb{R}^{n}\), el vector \(-x \coloneq (-1)x\) se llama \textcolor{blue}{inverso aditivo} de \(x\).
+
+    \begin{theorem}
+        Para todos los vectores \(x,\ y,\ z \in \mathbb{R}^{n}\) y para todos los números \(s,\ t \in \mathbb{R}\) se cumple que:
+
+        \begin{enumerate}[label = \textnormal{\Roman*)}]
+            \item \((x + y) + z = x + (y + z)\)
+            \item \(x + y = y + z\)
+            \item \(x + \vb*{0} = x\)
+            \item \(x + (-x) = \vb*{0}\)
+            \item \(s(tx) = (st)x\)
+            \item \(1x = x\)
+            \item \(t(x + y) = tx + ty\)
+            \item \((s + t)x = sx + tx\)
         \end{enumerate}
-    \end{definicion}
-
-    \begin{theorem}
-        Una función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{2}\) es lineal si y solo si se escribe
-
-        \begin{equation*}
-            f(x, y) = x\vb*{u} + y\vb*{v},
-        \end{equation*}
-
-        donde \(\vb*{u}\) y \(\vb*{v}\) son vectores fijos en \(\mathbb{R}^{2}\).
-    \end{theorem}
-
-    \begin{obs}
-        Las transformaciones ortogonales son funciones lineales.
-    \end{obs}
-
-    \section{Extensión lineal}
-
-    Dados los vectores \(\vb*{v}_{1},\ \vb*{v}_{2}, \dots, \vb*{v}_{k}\) en \(\mathbb{R}^{n}\), una \textcolor{blue}{combinación lineal} de ellos es el vector
-
-    \begin{equation*}
-        \sum_{i = 1}^{k} \lambda_{i} \vb*{v}_{i}\in\mathbb{R}^{n},
-    \end{equation*}
-
-    donde \(\lambda_{i}\in\mathbb{R},\ i = 1, \dots, k\), son escalares cualesquiera a los que llamamos los \textcolor{red}{coeficientes} de la combinación lineal.
-
-    Si tenemos una función lineal \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\), se cumple que preserva combinaciones lineales pues
-
-    \begin{equation*}
-        f\left(\sum_{i = 1}^{k} \lambda_{i} \vb*{v}_{i}\right) = \sum_{i = 1}^{k} f(\lambda_{i} \vb*{v}_{i}) = \sum_{i = 1}^{k} \lambda_{i} f(\vb*{v}_{i}).
-    \end{equation*}
-    
-    Así que podemos redefinir la \textcolor{blue}{función lineal} como aquella que cumple:
-    
-    \begin{equation*}
-        f\left(\sum_{i = 1}^{k} \lambda_{i} \vb*{v}_{i}\right) = \sum_{i = 1}^{k} \lambda_{i} f(\vb*{v}_{i}),
-    \end{equation*}
-
-    para cualesquiera \(\vb*{v}_{1},\ \vb*{v}_{2}, \dots, \vb*{v}_{k}\in\mathbb{R}^{n}\) y \(\lambda_{1},\ \lambda_{2}, \dots,\ \lambda_{k}\in\mathbb{R}\).
-
-    Si tomamos \(n\) vectores \(\vb*{u}_{1},\ \vb*{u}_{2}, \dots,\ \vb*{u}_{n} \in \mathbb{R}^{m}\) arbitrariamente, y queremos encontrar una función lineal \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) que cumpla \(f(\vb*{e}_{i}) = \vb*{u}_{i}\) para \(i = 1, 2, \dots, n\), entonces debemos definirla en todo \(\mathbb{R}^{n}\) como
-
-    \begin{equation*}
-        f(x_{1}, x_{2}, \dots, x_{n}) = \sum_{i = 1}^{n} x_{i} \vb*{u}_{i}.
-    \end{equation*}
-
-    A esta función se le llama la \textcolor{red}{extensión lineal a \(\mathbb{R}^{n}\)} de lo que determinamos para la base canónica.
-
-    \begin{theorem}
-        Una función \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) es lineal si y solo si se escribe
-
-        \begin{equation*}
-            f(x_{1}, x_{2}, \dots, x_{n}) = x_{1}\vb*{u}_{1} + x_{2}\vb*{u}_{2} + \cdots + x_{n}\vb*{u}_{n} = \sum_{i = 1}^{n} x_{i} \vb*{u}_{i},
-        \end{equation*}
-
-        donde \(\vb*{u}_{1},\ \vb*{u}_{2},\ \dots,\ \vb*{u}_{n}\in\mathbb{R}^{m}\).
-    \end{theorem}
-
-    \begin{obs}
-        \(\vb*{u}_{i} = f(\vb*{e}_{i}).\)
-    \end{obs}
-
-    \begin{corollary}
-        Si \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) y \(g \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) son dos funciones lineales tales que \(f(\vb*{e}_{i}) = g(\vb*{e}_{i})\) para \(i = 1,\ 2,\ \dots,\ n\), entonces \(f(x) = g(x)\) para toda \(x\in\mathbb{R}^{n}\).
-    \end{corollary}
-
-    \section{La estructura de las funciones lineales}
-
-    Sea  \(\mathcal{L}(n, m)\) el conjunto de todas las funciones lineales de \(\mathbb{R}^{n} \to \mathbb{R}^{m}\), es decir,
-
-    \begin{equation*}
-        \mathcal{L}(n, m) = \left\lbrace f \colon \mathbb{R}^{n} \to \mathbb{R}^{m} \mid \text{f es lineal}\right\rbrace.
-    \end{equation*}
-
-    Con el codominio se tienen las operaciones de suma y multiplicación por escalares, estas operaciones se pueden definir también en las funciones; en cierta, las funciones las heredan. Dadas \(f,\ g \in \mathcal{L}(n, m)\) y \(t\in\mathbb{R}\), sean
-
-    \begin{equation*}
-        f + g \colon \mathbb{R}^{n} \to \mathbb{R}^{m}, \qquad (f + g)(x) \coloneq f(x) + g(x)
-    \end{equation*}
-
-    y
-
-    \begin{equation*}
-        tf \ordinarycolon \mathbb{R}^{n} \to \mathbb{R}^{m}, \qquad (tf)(x) \coloneq t(f(x)).
-    \end{equation*}
-
-    \section{Matrices}
-
-    Las matrices son arreglos rectangulares de números, tablas podría decirse, donde los renglones y las columnas no tienen ningún significado extra. En nuestro contexto actual, habrán de ser los \emph{paquetes} que cargan toda la información de las funciones lineales y nos darán la herramienta para hacer cálculos respecto de ellas, además de simplificar la notación.
-
-    \subsection{Vectores columna}
-
-    \begin{notation}
-        De ahora en adelante, los vectores en \(\mathbb{R}^{n}\) se escribirán como columnas y no como renglones. Es decir, si antes escribíamos \(x = (x_{1}, x_{2}, \dots, x_{n})\), ahora escribiremos
-
-        \begin{equation*}
-            x = \mqty(x_{1}\\ x_{2}\\ \vdots \\ x_{n}).
-        \end{equation*}
-
-        El inconveniente de que entonces se complica escribir un vector dentro del texto, lo subsanamos al llamar a los vectores renglón \textcolor{blue}{transpuestos}, y los denotaremos con \(x^{\top} = (x_{1}, x_{2}, \dots, x_{n})\), o bien, \(x = (x_{1}, x_{2}, \dots, x_{n})^{\top}\), conviniendo que los \textcolor{blue}{transpuestos} de vectores renglón son los vectores. Aunque a veces se nos va a olvidar poner el exponente \(\top\) de ``transpuesto''.
-
-        Así, por ejemplo, tenemos que la base canónica de \(\mathbb{R}^{2}\) es \(\vb*{e}_{1} = (1, 0)^{\top}\) y \(\vb*{e}_{2} = (0, 1)^{\top}\), que quiere decir que
-
-        \begin{equation*}
-            \vb*{e}_{1} = \mqty(1 \\ 0) \quad \text{y} \quad \vb*{e}_{2} = \mqty(0 \\ 1).
-        \end{equation*}
-    \end{notation}
-
-    \subsection{La matriz de una función lineal}
-
-    Una matriz de \(m \cross n\) es un arreglo rectangular (o tabla) de números reales con \(m\) renglones y \(n\) columnas. Si, usando dos subíndices, denotamos con \(a_{ij}\) al número que están en el renglón \(i\) y la columna \(j\), llamado \textcolor{blue}{entrada}, tenemos que una matriz de \(m \cross n\) es
-
-    \begin{equation*}
-        A = \mqty(a_{11} & a_{12} & \cdots & a_{1n}\\
-        a_{21} & a_{22} & \cdots & a_{2n}\\
-        \vdots & \vdots & \ddots & \vdots\\
-        a_{m1} & a_{m2} & \cdots & a_{mn}).
-    \end{equation*}
-
-    Podríamos también definirla como un conjunto ordenado de \(n\) vectores en \(\mathbb{R}^{m}\): sus columnas. Es decir, la matriz \(A\) anterior se puede escribir como 
-
-    \begin{equation*}
-        A = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n}), \; \text{donde}\; \vb*{u}_{i} = \mqty(a_{1i}\\ a_{2i}\\ \vdots\\ a_{mi})\in\mathbb{R}^{m},\ i = 1, 2, \dots, n.
-    \end{equation*}
-
-    \begin{obs}
-        A la matriz \(A\) se le asocia la función lineal \(f \colon \mathbb{R}^{n}\to \mathbb{R}^{m}\) que manda al vector canónico \(\vb*{e}_{i} \in \mathbb{R}^{n}\) en su columna i-ésima, es decir, tal que \(f(\vb*{e}_{i}) = \vb*{u}_{i}\) para \(i = 1, 2, \dots, n\).
-    \end{obs}
-
-    A cada función lineal \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\)  se le asocia la matriz \(m \cross n\) que tiene como columnas a sus valores en la base canónica, es decir, se le asocia la matriz
-
-    \begin{equation*}
-        A = (f(\vb*{e}_{1}), f(\vb*{e}_{2}), \dots, f(\vb*{e}_{n})).
-    \end{equation*}
-
-    \begin{exe}
-        A la función lineal de \(\mathbb{R}^{3}\) en \(\mathbb{R}^{3}\) se le asocia la matriz
-
-        \begin{equation*}
-            \mqty(1 & 6 & 2\\
-                2 & 5 & 3\\
-                3 & 4 & 1).
-        \end{equation*}
-    \end{exe}
-
-    \begin{exe}
-        A la transformación ``compadre ortogonal'' de \(\mathbb{R}^{2}\) en \(\mathbb{R}^{2}\) se le asocia la matriz
-        
-        \begin{equation*}
-            \mqty(1 & 0\\
-                0 & 1).
-        \end{equation*}
-    \end{exe}
-
-    Definamos la el \textcolor{red}{producto de una matriz por un vector} para que el resultado sea lo que su función lineal asociada hace al vector. Es decir, si \(A\) es una matriz \(m \cross n\), podrá multiplicar solo a vectores \(x \in \mathbb{R}^{n}\) y el resultado será un vector en \(\mathbb{R}^{m}\). Como ya vimos, \(A\) se puede escribir como \(A = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n})\), donde \(\vb*{u}_{i} \in \mathbb{R}^{m}\), para \(i = 1, 2, \dots, n\); y por su parte, \(x = (x_{1}, x_{2}, \dots, x_{n})^{\top}\). Definamos entonces el \emph{producto} de \(A\) por \(x\) como
-
-    \begin{equation*}
-        A x = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n})\mqty(x_{1} \\ x_{2} \\ \vdots \\ x_{n}) \coloneq x_{1}\vb*{u}_{1} + x_{2}\vb*{u}_{2} + \cdots + x_{n}\vb*{u}_{n}.
-    \end{equation*}
-
-    \begin{theorem}
-        Las funciones lineales de \(\mathbb{R}^{n}\) en \(\mathbb{R}^{m}\) están en correspondencia natural y biunívoca con las matrices de \(m \cross n\), de tal manera que a la función \(f\) le corresponde la matriz \(A\) que cumple
-
-        \begin{equation*}
-            f(x) = Ax
-        \end{equation*}
-
-        para todo \(x \in \mathbb{R}^{n}\).
-    \end{theorem}
-
-    \begin{obs}
-        Cuando \(m = 1\) el producto que acabamos de definir corresponde al producto interior. Es decir, si 
-
-        \begin{equation*}
-            y^{\top} x = y \vdot x.
-        \end{equation*}
-    \end{obs}
-
-    \subsection{Multiplicación de matrices}
-
-    Vamos ahora a definir la multiplicación de matrices correspondiendo a la composición de funciones lineales.
-
-    Sean \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) y \(g \colon \mathbb{R}^{m} \to \mathbb{R}^{k}\), entonces \(g \circ f \colon \mathbb{R}^{n} \to \mathbb{R}^{k}\) también es lineal. Sean \(A\) la matriz \(m \cross n\) y \(B\) la matriz \(k \cross m\) que corresponden a \(f\) y a \(g\) respectivamente. Definimos el producto \(BA\) como la matriz \(k \cross n\) que corresponde a la función lineal \(g \circ f\) . Es decir, \(BA\) es la única matriz \(k \cross n\) que cumple
-
-    \begin{equation*}
-        (g \circ f)(x) = (BA)x \quad \text{para todo} \quad x \in \mathbb{R}^{n}.
-    \end{equation*}
-
-    \subsection{Algunas familias distinguidas de matrices}
-
-    \subsubsection*{La matriz identidad}
-
-    La \textcolor{blue}{matriz identidad}, o simplemente ``la identidad'' , es la matriz asociada a la función identidad, que se denota como \(I\), y es la matriz que tiene \(1\) en la diagonal y \(0\) fuera de ella, es decir,
-
-    \begin{equation*}
-        I = \mqty(1 & 0 & 0 & \cdots & 0\\
-            0 & 1 & 0 & \cdots & 0\\
-            0 & 0 & 1 & \cdots & 0\\
-            \vdots & \vdots & \vdots & \ddots & \vdots\\
-            0 & 0 & 0 & \cdots & 1).
-    \end{equation*}
-
-    \begin{obs}
-        La matriz identidad cumple que \(A I = A\) e \(I A = A\) para cualquier matriz \(A\) que se deje multiplicar por ella: es la \textcolor{blue}{identidad multiplicativa}.
-    \end{obs}
-
-    \subsubsection*{Homotecias}
-
-    Las \textcolor{blue}{homotecias}, como funciones, son simples ``cambios de escala''. Si tomamos un número \(k \in \mathbb{R}\), con \(k \neq 0\), la función \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{n}\) definida por \(f(x) = kx\) es claramente lineal y se llama una \textcolor{blue}{homotecia}. Entonces tiene una matriz asociada que es \(kI\), la matriz que tiene solo \(k\) en la diagonal y \(0\) fuera de ella. Como función, lo que hace es expandir uniformemente desde el origen (si \(k > 1\)), o bien contraer (cuando \(k < 1\)).
-
-    \begin{obs}
-        Las homotecias tienen la propiedad de conmutar con cualquier otra matriz, pues \(A(kI) = k(AI) = kA = k(IA) = (kI)A\).
-    \end{obs}
-
-    \subsubsection*{Matrices de permutaciones}
-
-    Recordemos que una permutación de \(n\) elementos es una función biyectiva \(\rho \colon \Delta_{n} \to \Delta_{n}\), donde podemos tomar \(\Delta_{n} = \left\lbrace 1, 2, \dots, n\right\rbrace\); y que todas estas permutaciones forman el grupo simétrico de orden \(n\), \(S_{n}\), con \(n!\) elementos. Ahora bien, a cada permutación \(\rho \colon \Delta_{n} \to \Delta_{n}\) se le puede asociar la función lineal \(f_{\rho} \colon \mathbb{R}^{n} \to \mathbb{R}^{n}\) definida por \(f_{\rho}(\vb*{e}_{i}) = \vb*{e}_{\rho(i)}\); es decir, \(f_{\rho}\) permuta a los elementos de la base canónica según \(\rho\) y se extiende linealmente a \(\mathbb{R}^{n}\). A la matriz asociada a esta función lineal se le llama la \textcolor{blue}{matriz de la permutación \(\rho\)}; a la que denotaremos como \(A_{\rho}\). 
-
-    \begin{obs}
-        La multiplicación de matrices de permutaciones es de nuevo una matriz de permutación y corresponde a la composición de las permutaciones correspondientes. Es decir, si \(\rho,\ \sigma \in S_{n}\), entonces \(A_{\rho}A_{\sigma} = A_{\rho \circ \sigma}\).
-    \end{obs}
-
-    \begin{obs}
-        El grupo simétrico se puede ver como un ``grupo de matrices''.
-    \end{obs}
-
-    \subsubsection*{Rotaciones}
-
-    Sabemos que una rotación es una transformación lineal que manda al vector canónico \(\vb*{e}_{1}\) en un vector unitario \(\vb*{u} \in \mathbb{S}^{1}\) y al otro vector canónico \(\vb*{e}_{2}\) en su ``compadre ortogonal'' \(\vb*{u}^{\top}\). Si escribimos a \(\vb*{u}\) en términos de su ángulo respecto del eje \(x\), es decir, respecto de \(\vb*{e}_{1}\), entonces obtenemos que la matriz asociada a la rotación por un ángulo \(\theta\) es
-
-    \begin{equation*}
-        R_{\theta} \coloneq \mqty(\cos\theta & -\sin \theta \\ \sin\theta & \cos\theta).
-    \end{equation*}
-
-    \begin{obs}
-        \(R_{-\theta}R_{\theta} = I\).
-    \end{obs}
-
-    \begin{obs}
-        \(R_{\alpha}R_{\beta} = R_{\alpha + \beta}\).
-    \end{obs}
-
-    \subsubsection*{Reflexiones}
-
-    Conviene parametrizar las reflexiones no por el ángulo de la imagen de \(\vb*{e}_{1}\), sino por su mitad, que es el ángulo de la recta-espejo de la reflexión. Pues si, como es natural, a una recta por el origen le asociamos su ángulo (entre \(0\) y \(\pi\)) con el rayo positivo del eje \(x\), entonces la reflexión, \(E_{\theta}\), en la recta con ángulo \(\theta\) manda a \(\vb*{e}_{1}\) en el vector unitario de ángulo \(2\theta\), y por lo tanto la matriz asociada es
-    
-    \begin{equation*}
-        E_{\theta} \coloneq \mqty(\cos 2\theta & \sin 2\theta\\ \sin 2\theta & -\cos 2\theta),
-    \end{equation*}
-
-    pues el segundo vector no es el ``compadre ortogonal'' sino su negativo.
-
-    \begin{obs}
-        Una reflexión es su propia inversa, \emph{i.e.}, \(E_{\theta}E_{\theta} = I\).
-    \end{obs}
-
-    \begin{obs}
-        La composición de dos reflexiones es la rotación del doble del ángulo entre sus espejos, \emph{i.e.}, \(E_{\alpha}E_{\beta} = R_{2(\alpha - \beta)}\).
-    \end{obs}
-
-    \subsubsection*{Matrices ortogonales (y transpuestas)}
-
-    Decimos que una matriz es \textcolor{red}{ortogonal} si su función lineal asociada es ortogonal. Entonces, podemos considera el grupo de transformaciones \(\vb*{O}(2)\) como un grupo de matrices con la operación de multiplicación.
-
-    Llamemos a una matriz \textcolor{blue}{ortogonal} si es cuadrada, y su función lineal asociada es una transformación ortogonal (que preserva el producto interior). Entonces, si \(A\) es ortogonal, todas sus columnas son vectores unitarios y además por parejas son ortogonales. Dicho más explícitamente, si \(A = (\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n})\) entonces \(\vb*{u}_{i} )f(\vb*{e}_{i})\) donde \(f\) es su función asociada (\(f(x) = Ax\)), y si \(f \in \vb*{O}(2)\) se cumple que
-
-    \begin{equation*}
-        \vb*{u}_{i} \vdot \vb*{u}_{j} = \vb*{e}_{i} \vdot \vb*{e}_{j} = \delta_{ij} \coloneq \begin{cases}
-            1 & \text{si } i = j \\
-            0 & \text{si } i \neq j,
-        \end{cases}
-    \end{equation*}
-
-    donde \(\delta_{ij}\) es conocida como la \textcolor{blue}{delta de Kroenecker}. En este caso al conjunto ordenado de vectores \(\vb*{u}_{1}, \vb*{u}_{2}, \dots, \vb*{u}_{n}\) se le llama \textcolor{red}{base ortonormal}. Pero nótese que estos \(n^{2}\) productos interiores son las entradas de la matriz
-
-    \begin{equation*}
-        \mqty({\vb*{u}_{1}}^{\top}\\ {\vb*{u}_{2}}^{\top}\\ \vdots\\ {\vb*{u}_{n}}^{\top})(\vb*{u}_{1}, \vb*{u}_{2}, \cdots, \vb*{u}_{n}) = \mqty(u_{1} \vdot \vb*{u}_{1} & u_{1} \vdot \vb*{u}_{2} & \cdots & u_{1} \vdot \vb*{u}_{n}\\
-        u_{2} \vdot \vb*{u}_{1} & u_{2} \vdot \vb*{u}_{2} & \cdots & u_{2} \vdot \vb*{u}_{n}\\
-        \vdots & \vdots & \ddots & \vdots\\
-        u_{n} \vdot \vb*{u}_{1} & u_{n} \vdot \vb*{u}_{2} & \cdots & u_{n} \vdot \vb*{u}_{n}). 
-    \end{equation*}
-
-    \begin{obs}
-        Si llamamos \textcolor{red}{transpuesta} de una matriz a la que se obtiene cambiando columnas por renglones, hemos demostrado que la ``inversa'' de una matriz ortogonal es su transpuesta.
-    \end{obs}
-
-    En general, llamemos la \textcolor{blue}{transpuesta de una matriz}
-
-    \begin{equation*}
-        A = (\vb*{v}_{1}, \vb*{v}_{2}, \dots, \vb*{v}_{n})
-    \end{equation*}
-
-    a la matriz
-
-    \begin{equation*}
-        A^{\top} = \mqty(v_{1}^{\top}\\ v_{2}^{\top}\\ \vdots\\ v_{n}^{\top}),
-    \end{equation*}
-
-    que se obtiene al reflejar las entradas de la diagonal; si \(A\) es \(m \cross n\) entonces \(A^{\top}\) es \(n \cross m\).
-
-    \begin{theorem}
-        Una matriz \(A\) de \(n \cross n\) es ortogonal (la matriz de una transformación ortogonal) si y solo si
-
-        \begin{equation*}
-            A^{\top}A = I.
-        \end{equation*}
-    \end{theorem}
-
-    \subsection{El Grupo General Lineal (GL(2))}
-
-    \begin{definicion}
-        Una matriz \(A\) de \(n \cross n\) es \textcolor{blue}{invertible} si existe otra matriz de \(n \cross n\), llamada su \textcolor{blue}{inversa} y denotada \(A^{-1}\), tal que \(A A^{-1} = A^{-1}A = I\). Al conjunto de todas las matrices invertibles de \(n \cross n\) se le llama el \textcolor{red}{grupo general lineal de orden n} y se le denota \(\bm{GL}(n)\). Así que \(A \in \bm{GL}(n)\) quiere decir que \(A\) es invertible yde \(n \cross n\).
-    \end{definicion}
-
-    \begin{obs}
-        A \(\bm{GL}(2)\) se le puede pensar como grupo de transformaciones, o bien como un grupo de matrices.
-    \end{obs}
-    \begin{obs}
-        La operación del grupo es la multiplicación de matrices.
-    \end{obs}
-    \begin{obs}
-        \(\bm{O}(n)\) es un subgrupo de \(\bm{GL}(n)\).
-    \end{obs}
-
-    \subsubsection{El determinante}
-
-    \begin{definicion}
-        Definimos el \textcolor{blue}{determinante} de la matriz \(A\) como el número
-
-        \begin{equation*}
-            \det(
-                \mqty{
-                    a & b \\
-                    c & d
-                }
-            ) \coloneq ad - bc.
-        \end{equation*}
-
-        Nótese que si \(A = (\vb*{u}, \vb*{v})\), entonces \(\det(A) = \det(\vb*{u}, \vb*{v})\).
-    \end{definicion}
-
-    \begin{theorem}
-        Sea \(A = \mqty(a & b \\ c & d)\), entonces \(A\) es invertible si y solo si \(\det(A) = ad - bc \neq 0\); y en este caso
-
-        \begin{equation*}
-            A^{-1} = \dfrac{1}{det(A)} \mqty(
-                d & -b \\
-                -c & a
-            ).
-        \end{equation*}
     \end{theorem}
 
     \begin{lemma}
-        Sean \(A\) y \(B\) matrices \(2 \cross 2\), entonces \(\det(AB) = \det(A)\det(B)\).
+        Si \(x \in \mathbb{R}^{2}\) y \(t \in \mathbb{R}\) son tales que \(tx = \vb*{0}\) entonces \(t = 0\) 0 \(x = \vb*{0}\).
     \end{lemma}
-
-    \begin{theorem}
-        Sea \(A\) una matriz \(2 \cross n\), entonces \(\det(A)\) es el área del paralelogramo definido por sus vectores columna.
-    \end{theorem}
-
-    \begin{obs}
-        Se dice que la matriz \(A\), o que la función \(f(x) = Ax\), \textcolor{red}{invierte orientación} si \(\det(A) < 0\), o bien, que la preserva si \(\det(A) > 0\).
-    \end{obs}
-
-    \begin{obs}
-        El determinante distingue nuestras dos clases de matrices ortogonales (en \(\bm{O}(2)\)); es \(1\) para las rotaciones, y \(-1\) para las reflexiones. Es decir, las rotaciones preservan orientación y las reflexiones la invierten.
-    \end{obs}
-
-    \section{Tareas}
-
-    \subsection{Tarea 1}
-
-    \begin{enumerate}[label = Pregunta \arabic*.]
-        \item Una función \(f \colon \mathbb{R}^{n} \to \mathbb{R}^{m}\) es lineal si y solo si.
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(f(ax) = a f(x)\quad \forall a\in \mathbb{R}, \forall x \in \mathbb{R}^{n}\)}
-            \item \textcolor{blue}{\(f(x + y) = f(x) + f(y)\quad \forall x,\ y \in \mathbb{R}^{n}\)}
-        \end{itemize}
-        \item Dada una función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{2}\) y \(u, \ v\) una base ortonormal. La función \(f\) es lineal si y solo si se escribe de la forma \(f(x, y) = xu + yv\).
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{No es necesario que \(u,\ v\) sean base, basta con solo dos vectores.}
-        \end{itemize}
-
-        \item ¿Cuál de las siguientes \textcolor{red}{NO} es una función lineal?
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(f(x) = 2x + 1\).}
-        \end{itemize}
-
-        \item Elige la opción correcta sobre las funciones lineales.
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{Dada \(f\) función lineal, \(f(0) = 0\).}
-        \end{itemize}
-
-        \item El conjunto llamado grupo general lineal de orden \(n\), denotado como \(\bm{GL}(n)\), es el conjunto
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(\left\lbrace A \in \mathcal{M}_{n \cross n} \mid A\ \text{es invertible}\right\rbrace\).}
-        \end{itemize}
-
-        \item Dada la función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{3}\) dada por \(f(x, y) = (x, y, x)\), esta tiene una matriz asociada
-        
-        \begin{equation*}
-            A = \mqty(
-                a & 0 \\
-                0 & b \\
-                1 & c
-            ).
-        \end{equation*}
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(a = 1,\ b = 1,\ c = 0\).}
-        \end{itemize}
-
-        \item  Dada la función \(f \colon \mathbb{R}^{2} \to \mathbb{R}^{3}\) dada por \(f(x, y) = (2x + y, 2y - x, 3x - y)\), esta tiene una matriz asociada
-        
-        \begin{equation*}
-            A = \mqty(
-                a & 1 \\
-                b & 2 \\
-                3 & c
-            ).
-        \end{equation*}
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(a = 2,\ b = -1,\ c = -1\).}
-        \end{itemize}
-
-        \item Dada la función \(f \colon \mathbb{R}^{3} \to \mathbb{R}^{4}\), esta tiene una matriz asociada de
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(3\) columnas.}
-            \item \textcolor{blue}{\(4\) renglones.}
-        \end{itemize}
-
-        \item La siguiente matriz 
-        
-        \begin{equation*}
-            A = \mqty(
-                a & -b \\
-                b & a
-            )
-        \end{equation*}
-
-        es la matriz de rotación de ángulo \(\theta\).
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(a = \cos(\theta),\ b = \sin(\theta)\).}
-        \end{itemize}
-
-        \item La siguiente matriz 
-        
-        \begin{equation*}
-            A = \mqty(
-                a & b \\
-                b & -a
-            )
-        \end{equation*}
-
-        es la matriz de reflexión con respecto a la recta de ángulo \(\theta\).
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(a = \cos(2\theta),\ b = \sin(2\theta)\).}
-        \end{itemize}
-
-        \item La siguiente matriz
-        
-        \begin{equation*}
-            A = \dfrac{1}{2}\mqty(
-                a & b \\
-                c & d
-            )
-        \end{equation*}
-
-        es la matriz de rotación de ángulo \(60\).
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(a = 1,\ b = -\sqrt{3},\ c = \sqrt{3},\ d = 1\).}
-        \end{itemize}
-
-        \item La siguiente matriz
-        
-        \begin{equation*}
-            A = \mqty(
-                a & b \\
-                c & d
-            )
-        \end{equation*}
-
-        es la matriz de permutación \(S_{2}\) que intercambia los elementos de \(\Delta_{2}\).
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(a = 1,\ b = 0,\ c = 0,\ d = 1\).}
-        \end{itemize}
-
-        \item Una matriz \(A\) de \(2 \cross 2\) es invertible si y solo si
-        
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{\(\det(A) \neq 0\).}
-        \end{itemize}
-
-        \item Sean \(a,\ b \neq 0\). La matriz es invertible
-        
-        \begin{equation*}
-            \mqty(
-                a & -b \\
-                b & a
-            ).
-        \end{equation*}
-
-        \begin{itemize}[label = \textcolor{green}{\square}]
-            \item \textcolor{blue}{Verdadero.}
-        \end{itemize}
-    \end{enumerate}
 \end{document}
