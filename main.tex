@@ -15,6 +15,7 @@
 \textwidth 16cm                       % Ancho
 \oddsidemargin -0.0cm                 % Espacio de margen (como es formato de libro, los margenes se 		                                        declaran para páginas pares e impares
 \usepackage[spanish]{todonotes}
+\usepackage{xfrac}
 \usepackage{hyperref}
 
 \newtheoremstyle{definicion}% name
@@ -93,6 +94,8 @@
 \setlength{\parindent}{2em}           % Sangría
 \setlength{\parskip}{0.5em}           % Espacio entre párrafos
 
+\graphicspath{{./img}}
+
 \title{\Huge{El plano euclidio}}
 \author{Geometría Analítica I}
 \date{\today}
@@ -116,7 +119,12 @@
 
     La suma vectorial corresponde geométricamente a la regla del paralelogramo usada para encontrar la resultante de dos vectores. Esto es, se consideran los vectores como segmentos dirigidos que salen del origen y generan entonces un paralelogramo, y el vector que va del origen a la otra esquina es la suma.
     
-    \missingfigure[figheight=3cm]{Insertar imagen del método del paralelogramo}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[scale=0.2]{1}
+        \caption{Método del paralelogramos}
+        \label{fig:paralelogramo}
+    \end{figure}
 
     \begin{definicion}
         Dados un vector \(\vb*{u} = (x, y) \in \mathbb{R}^{2}\) y un número \(t \in \mathbb{R}\) se define la \textcolor{blue}{multiplicación escalar} \(t \vb*{u}\) como el vector que resulta de multiplicar cada componente del vector por el número:
@@ -197,4 +205,55 @@
         Y la recta \(\ell\) que pasa por \(\vb*{p}\) y \(\vb*{q}\) se extiende ``indefinidamente'' a ambos lados del segmento \(\overline{\vb*{p}\vb*{q}}\), para \(t > 1\) del lado de \(\vb*{q}\) y para \(t < 0\) del lado de \(\vb*{p}\).
     \end{obs}
 
+    \subsection{Coordenadas baricéntricas}
+
+    Supongamos que \(\vb*{p}\) y \(\vb*{q}\) son puntos distintos del plano. Para cualquier \(t \in \mathbb{R}\) , se tiene que
+
+    \begin{equation*}
+        \vb*{p} + t(\vb*{q} - \vb*{p}) = \vb*{p} + t\vb*{q} - t\vb*{p} = (1 - t)\vb*{p} + t\vb{q}
+    \end{equation*}
+
+    al reagrupar los términos. Y esta última expresión, a su vez, se puede reescribir como 
+
+    \begin{equation*}
+        s\vb*{p} + t\vb*{q}\quad \text{con} \quad s + t = 1,
+    \end{equation*}
+
+    donde hemos introducido la nueva variable \(s = 1 - t\). De lo anterior se deduce que la recta \(\ell\) que pasa por \(\vb*{p}\) y \(\vb*{q}\) puede también describirse como 
+
+    \begin{equation*}
+        \ell \coloneq \left\lbrace s\vb*{p} + t\vb*{q} \mid s + t = 1\right\rbrace,
+    \end{equation*}
+
+    que es una \textcolor{blue}{expresión baricéntrica} de \(\ell\). A los números \(s,\ t\) se les conoce como \textcolor{blue}{coordenadas baricéntricas} del punto \(x = s\vb*{p} + t\vb*{q}\).
+
+    Las coordenadas baricéntricas tienen la ventaja de que ya no distinguen entre los dos puntos. Al expresar una recta en coordenadas baricéntricas no le damos una dirección preferida. Se usan simultáneamente los parámetros naturales para las dos direcciones (de \(\vb*{p}\) a \(\vb*{q}\) y de \(\vb*{q}\) a \(\vb*{p}\)); pues si \(s + t = 1\), entonces
+
+    \begin{equation*}
+        s\vb*{p} + t\vb*{q} = \vb*{p} + t(\vb*{q} - \vb*{p}) = \vb*{q} + s(\vb*{p} - \vb*{q}).
+    \end{equation*}
+
+    Nótese que \(x = s\vb*{p} + t\vb*{q}\) está en el segmento entre \(\vb*{p}\) y \(\vb*{q}\) si y solo si \(t \geq 0\) y \(s \geq 0\). La extensión de la recta más allá de \(\vb*{q}\) tiene coordenadas baricéntricas \(s,\ t\) con \(s < 0\) (y por lo tanto \(t > 1\)); así que los puntos de \(\ell\) fuera del segmento de \(\vb*{p}\) a \(\vb*{q}\) tienen alguna coordenada baricéntrica negativa (la correspondiente al punto más lejano).
+
+    \begin{theorem}
+        Dado un triángulo \(\vb*{a},\ \vb*{b}\) y \(\vb*{c}\), sus tres medianas ``concurren'' en un punto que las parte en la proporción \(\frac{2}{3}\) a \(\frac{1}{3}\) (del lado opuesto).
+
+        \missingfigure[]{Insertar figura del teorema que se encuentra en la página 38}
+    \end{theorem}
+
+    \begin{proof}
+        Puesto que el punto medio del segmento \(\vb*{b},\ \vb*{c}\) es (\(\frac{1}{2}\vb*{b} + \frac{1}{2}\vb*{c}\)), entonces la mediana por \(\vb*{a}\) es el segmento
+
+        \begin{equation*}
+            \left\lbrace s\vb*{a} + t \left(\dfrac{1}{2}\vb*{b} + \dfrac{1}{2}\vb*{c}\right) \mid s + t = 1,\ s, t \geq 0\right\rbrace,
+        \end{equation*}
+
+        y análogamente se describen las otras dos medianas. Por suerte, el enunciado del teorema nos dice dónde buscar la intersección: el punto que describe en la mediana de \(\vb*{a}\) es precisamente
+
+        \begin{equation*}
+            \dfrac{1}{3}\vb*{a} + \dfrac{2}{3}\left(\dfrac{1}{2}\vb*{b} + \dfrac{1}{2}\vb*{c}\right) = \dfrac{1}{3}\vb*{a} + \dfrac{1}{3}\vb*{b} + \dfrac{1}{3}\vb*{c}.
+        \end{equation*}
+
+        Entonces, de las igualdades se deduce que las tres medianas \emph{concurren} en el punto \(\frac{1}{3}(\vb*{a} + \vb*{b} + \vb*{c})\), es decir, pasan por él. Este punto se llama el \textcolor{blue}{baricentro} del triángulo, y claramente parte a las medias en la proporción deseada. De nuevo, el baricentro corresponde al ``centro de masa'' o ``punto de equilibrio'' del triángulo.
+    \end{proof}
 \end{document}
