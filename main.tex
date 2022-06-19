@@ -850,6 +850,23 @@
 
         \begin{obs}
             De esta fórmula geométrica para el producto interior, se obtiene que \(\abs{\vb{u} \vdot \vb{v}} = \abs{\cos(\alpha)}\abs{\vb{u}}\abs{\vb{v}}\), así que la desigualdad de Schwartz (\(\abs{\vb{u} \vdot \vb{v}} \geq \abs{\vb{u}}\abs{\vb{v}}\)) es equivalente a \(\abs{\cos(\alpha)} \leq 1\).
-            
         \end{obs}
+
+        \subsection{El caso general}
+
+        \begin{lemma}
+            Sea \(\vb{u} \in \mathbb{R}^{n}\) un vector unitario (es decir, \(\abs{\vb{u}} = 1\)). Entonces para cualquier \(\vb{x} \in \mathbb{R}^{n}\) existe un vector \(\vb{y}\) perpendicular a \(\vb{u}\) y tal que 
+
+            \begin{equation*}
+                \vb{x} = (\vb{x} \vdot \vb{u}) \vb{u} + \vb{y}.
+            \end{equation*}
+        \end{lemma}
+
+        \begin{definicion}
+            Dados dos vectores no nulos \(\vb{u}\) y \(\vb{v}\) en \(\mathbb{R}^{2}\) el ángulo entre ellos es
+
+            \begin{equation*}
+                \textrm{ang}(\vb{u}, \vb{v}) = \arccos\left(\dfrac{\vb{u} \vdot \vb{v}}{\abs{\vb{u}}\abs{\vb{v}}}\right).
+            \end{equation*}
+        \end{definicion}
 \end{document}
