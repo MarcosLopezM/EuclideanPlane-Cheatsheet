@@ -558,4 +558,35 @@
                 \item \(\vb*{u}^{\perp} \vdot \vb*{v} = -(\vb*{u} \vdot \vb*{v}^{\perp})\)
             \end{enumerate}
         \end{lemma}
+
+        \subsubsection*{Sistemas de ecuaciones lineales II}
+
+        Usemos las herramientas del producto interior y del compadre ortogonal para revisar nuestro trabajo previo sobre los sistemas de dos ecuaciones lineales con dos incógnitas. Si pensamos cada ecuación como la coordenada de un vector, un sistema tal se escribe como
+
+        \begin{equation*}
+            s\vb*{u} + t\vb*{v} = \vb*{c},
+        \end{equation*}
+
+        donde \(s,\ t\) son las incógnitas y \(\vb*{u},\ \vb*{v},\ \vb*{c} \in \mathbb{R}^{2}\) están dados. Denotemos las coordenadas de \(\vb*{u} = (a, b)\), \(\vb*{v} = (c, d)\) y \(\vb*{c} = (e, f)\). Como esta es una ecuación vectorial, si la multiplicamos (con el producto interior) por un vector, obtendremos una ecuación lineal real. Y para eliminar una variable, digamos \(s\), podemos multiplicar por el compadre ortogonal de \(\vb*{u}\), para obtener
+
+        \begin{align*}
+            \vb*{u}^{\perp} \vdot \vb*{c} &= \vb*{u}^{\perp} \vdot (s\vb*{u}) + \vb*{u}^{\perp} \vdot (t\vb*{v}),\\
+            &= s\left(\vb*{u}^{\perp} \vdot \vb*{u}\right) + t\left(\vb*{u}^{\perp} \vdot \vb*{v}\right),\\
+            &= s(0) + t\left(\vb*{u}^{\perp} \vdot \vb*{v}\right),\\
+            &=  t\left(\vb*{u}^{\perp} \vdot \vb*{v}\right).
+        \end{align*}
+
+        \begin{definicion}
+            El \textcolor{blue}{determinante} de los vectores \(\vb*{u},\ \vb*{v} \in \mathbb{R}^{2}\) es el número real
+
+            \begin{equation*}
+                \det(\vb*{u}, \vb*{v}) \coloneq \vb*{u}^{\perp} \vdot \vb*{v}. 
+            \end{equation*}
+
+            Así que si suponemos que \(\det(\vb*{u}, \vb*{v}) \neq 0\), podemos despejar \(t\). De manera análoga despejar \(s\), y entonces concluir que el sistema de ecuaciones tiene solución única:
+
+            \begin{equation*}
+                t = \dfrac{\vb*{u}^{\perp} \vdot \vb*{c}}{\vb*{u}^{\perp} \vdot \vb*{v}}, \qquad s = \dfrac{\vb*{v}^{\perp} \vdot \vb*{c}}{\vb*{v}^{\perp} \vdot \vb*{u}}.
+            \end{equation*}
+        \end{definicion}
 \end{document}
