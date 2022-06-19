@@ -811,4 +811,28 @@
         \end{equation*}
 
         pues \(\ang(\vb*{x}, \vb*{y})\) corresponde al movimiento angular que nos lleva en la dirección de \(\vb*{x}\) a \(\vb*{y}\), y \(\ang(\vb*{y}, \vb*{x})\) es justo el movimiento inverso.
+
+        \section{Bases ortonormales}
+
+        \begin{definicion}
+            Una \textcolor{blue}{base ortonormal} de \(\mathbb{R}^{2}\) es una pareja de vectores unitarios y perpendiculares entre sí.
+        \end{definicion}
+
+        \begin{theorem}
+            Sean \(\vb{u}\) y \(\vb{v}\) una base ortonormal de \(\mathbb{R}^{2}\).  Entonces para cualquier \(\vb{x} \in \mathbb{R}^{2}\) se tiene que
+
+            \begin{equation*}
+                \vb{x} = (\vb{x} \vdot \vb{u}) \vb{u} + (\vb{x} \vdot \vb{v}) \vb{v}.
+            \end{equation*}
+        \end{theorem}
+
+        Como corolario de este teorema obtenemos la interpretación geométrica del producto interior de vectores unitarios.
+
+        \begin{corollary}
+            Si \(\vb{u},\ \vb{v} \in \mathbb{S}^{1}\) y \(\alpha\) es el ángulo entre ellos,  es decir, \(\alpha = \textrm{ang}(\vb{u}, \vb{v})\), entonces
+
+            \begin{equation*}
+                \vb{u} \vdot \vb{v} = \cos(\alpha).
+            \end{equation*}
+        \end{corollary}
 \end{document}
