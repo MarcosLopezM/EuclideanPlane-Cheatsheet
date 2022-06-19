@@ -152,4 +152,49 @@
     \begin{lemma}
         Si \(x \in \mathbb{R}^{2}\) y \(t \in \mathbb{R}\) son tales que \(tx = \vb*{0}\) entonces \(t = 0\) 0 \(x = \vb*{0}\).
     \end{lemma}
+
+    \section{Líneas}
+
+    Se nos pide describir el conjunto \(\mathcal{L}_{\vb*{v}} \coloneq \left\lbrace t\vb*{v} \in \mathbb{R}^{2} \mid t \in \mathbb{R}\right\rbrace\) donde \(\vb*{v} \in \mathbb{R}^{2}\). Es claro que que si \(\vb*{v} \neq \vb*{0}\), entonces \(\mathcal{L}_{\vb*{v}}\), al constar de todos los múltiplos escalares del vector \(\vb*{v}\), se dibuja como una recta que pasa por el origen (pues \(\vb*{0} = 0\vb*{0}\)) con la dirección de \(\vb*{v}\).
+
+    \begin{definicion}
+            Dados un punto \(\vb*{p}\) y un vector \(\vb*{v} \neq \vb*{0}\), la \textcolor{blue}{recta que pasa por} \(\vb*{p}\) \textcolor{blue}{con dirección} \(\vb*{v}\) es el conjunto
+
+            \begin{equation*}
+                \ell \coloneq \left\lbrace \vb*{p} + t\vb*{v} \mid t \in \mathbb{R}\right\rbrace.
+            \end{equation*}
+
+            Una \textcolor{blue}{recta} o \textcolor{blue}{línea} en \(\mathbb{R}^{2}\) es un subconjunto que tiene, para algún \(\vb*{p}\) y \(\vb*{v} \neq \vb*{0}\), la descripción anterior.
+            A esta forma de definir una recta se le conoce como \textcolor{blue}{representación (o expresión) paramétrica}.
+    \end{definicion}
+
+    \begin{lemma}
+        Dados dos puntos \(\vb*{p}\) y \(\vb*{q}\) en \(\mathbb{R}^{2}\), existe una recta que pasa por ellos.
+    \end{lemma}
+    \begin{proof}
+        Si tuviéramos que \(\vb*{p} = \vb*{q}\), como  hay muchas rectas que pasan por \(\vb*{p}\), ya acabamos. Supongamos entonces que \(\vb*{p} \neq \vb*{q}\). Si tomamos a \(\vb*{p}\) como punto base para la recta que buscamos, bastará con encontrar un vector que nos lleve de \(\vb*{p}\) a \(\vb*{q}\), para tomarlo como dirección. Este es la diferencia \(\vb*{q} - \vb*{p}\), pues claramente
+
+        \begin{equation*}
+            \vb*{p} + (\vb*{q} - \vb*{p}) = \vb*{q},
+        \end{equation*}
+
+        de tal manera que si definimos \(\vb*{d} \coloneq \vb*{q} - \vb*{p}\), como dirección, la recta
+
+        \begin{equation*}
+            \ell \coloneq \left\lbrace \vb*{p} + t\vb*{d} \mid t \in \mathbb{R}\right\rbrace
+        \end{equation*}
+
+        (que sí es una recta pues \(\vb*{d} = \vb*{q} - \vb*{p} \neq \vb*{0}\)), es la que funciona. Con \(t = 0\) obtenemos que \(\vb*{p} \in \ell\), y con \(t = 1\) que \(\vb*{q} \in \ell\).
+    \end{proof}
+
+    \begin{obs}
+        Obsérvese que cuando \(t\) toma valores entre \(0\) y \(1\), se obtienen puntos entre \(\vb*{p}\) y \(\vb*{q}\), así que al \textcolor{blue}{segmento} de \(\vb*{p}\) a \(\vb*{q}\), que denotaremos con \(\overline{\vb*{p}\vb*{q}}\), se debe definir como
+
+        \begin{equation*}
+            \overline{\vb*{p}\vb*{q}} \coloneq \left\lbrace \vb*{p} + t(\vb*{p} - \vb*{q}) \mid 0 \leq t \leq 1\right\rbrace.
+        \end{equation*}
+
+        Y la recta \(\ell\) que pasa por \(\vb*{p}\) y \(\vb*{q}\) se extiende ``indefinidamente'' a ambos lados del segmento \(\overline{\vb*{p}\vb*{q}}\), para \(t > 1\) del lado de \(\vb*{q}\) y para \(t < 0\) del lado de \(\vb*{p}\).
+    \end{obs}
+
 \end{document}
