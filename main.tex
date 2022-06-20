@@ -978,4 +978,62 @@
         \end{equation*}
 
         Y esta es la ecuación normal de la recta ortogonal al segmento \(\overline{\vb{p}\vb{q}}\) y que lo intersecta en su punto medio, llamada la \textcolor{blue}{mediatriz} de \(\vb{p}\) y \(\vb{q}\).
+
+        \subsection{Bisectrices y ecuaciones unitarias}
+
+        Preguntamos ahora cuál es el lugar geométrico de los puntos que equidistan de dos rectas \(\ell_{1}\) y \(\ell_{2}\). De todas las ecuaciones normales que definen a estas rectas, conviene escoger una donde el vector normal es unitario para que las distancias sean más fáciles de expresar. Tal ecuación se llama \textcolor{blue}{unitaria} y se obtiene de cualquier ecuación normal dividiendo entre la norma del vector normal. Sean \(\vb{u}_{1},\ \vb{u}_{2} \in \mathbb{S}^{1}\) y \(c_{1},\ c_{2} \in \mathbb{R}\) tal que, para \(i = 1, 2\),
+        
+        \begin{equation*}
+            \ell_{i} \colon \vb{u}_{i} \vdot \vb{x} = c_{i}.
+        \end{equation*}
+
+        Se tiene entonces que los puntos \(\vb{x}\) que equidistan de \(\ell_{1}\) y \(\ell_{2}\) son precisamente los que cumplen con la ecuación
+
+        \begin{equation*}
+            \abs{\vb{u}_{1} \vdot \vb{x} - c_{|}} = \abs{\vb{u}_{2} \vdot \vb{x} - c_{2}}.
+        \end{equation*}
+
+        Ahora bien, si el valor absoluto de dos números reales coincide, entonces o son iguales o son inversos aditivos, lo cual se expresa elegantemente de la siguiente manera:
+
+        \begin{equation*}
+            \abs{a} = \abs{b}\quad \Leftrightarrow\quad (a + b)(a - b) = 0,
+        \end{equation*}
+
+        que, aplicado a nuestra ecuación anterior, nos dice que el lugar geométrico que estamos buscando está determinado por la ecuación 
+
+        \begin{align*}
+            (\vb{u}_{1} \vdot \vb{x} - c_{1} + \vb{u}_{2} \vdot \vb{x} - c_{2})(\vb{u}_{1} \vdot \vb{x} - c_{1} - \vb{u}_{2} \vdot \vb{x} + c_{2}) &= 0,\\
+            ((\vb{u}_{1} + \vb{u}_{2}) \vdot \vb{x} - (c_{1} + c_{2}))((\vb{u}_{1} - \vb{u}_{2}) \vdot \vb{x} - (c_{1} - c_{2})) &= 0.
+        \end{align*}
+
+        Como cuando el producto de dos números es ceo alguno de ellos lo es, entonces nuestro lugar geométrico es la unión de dos rectas:
+
+        \begin{align*}
+            \beta_{1} \colon\qquad (\vb{u}_{1} + \vb{u}_{2}) \vdot \vb{x} &= (c_{1} + c_{2}),\\
+            \beta_{2} \colon\qquad (\vb{u}_{1} - \vb{u}_{2}) \vdot \vb{x} &= (c_{1} - c_{2}),
+        \end{align*}
+
+        que son las \textcolor{blue}{bisectrices} de las líneas \(\ell_{1}\) y \(\ell_{2}\). Observemos que son ortogonales pues 
+
+        \begin{equation*}
+            (\vb{u}_{1} + \vb{u}_{2}) \vdot (\vb{u}_{1} - \vb{u}_{1}) = \abs{\vb{u}_{1}}^{2} - \abs{\vb{u}_{2}}^{2} = 1 - 1 = 0,\\
+        \end{equation*}
+
+        y, geométricamente bisecan a los dos sectores o ángulos que forman las rectas; también por el punto de intersección, pues sus ecuaciones se obtienen sumando y restando las ecuaciones originales. En el círculo unitario también es claro que la suma y la diferencia de dos vectores tienen los ángulos adecuados.
+
+        \begin{theorem}
+            Las bisectrices (internas) de un triángulo son concurrentes.
+        \end{theorem}
+
+        \begin{proof}
+            SOlo hay que tener cuidado con cuáles ecuaciones unitarias trabajamos, pues hay dos posibles para cada recta. Si escogemos los vectores unitarios de las tres rectas, \(\ell_{1},\ \ell_{2}\) y \(\ell_{3}\) digamos, apuntando hacia adentro del triángulo, \(\vb{u}_{1},\ \vb{u}_{2}\) y \(\vb{u}_{3}\) respectivamente, entonces está claro que las sumas son normales a las bisectrices exteriores. El teorema habla entonces de las bisectrices que se obtienen como diferencias, que son, numerándolas por el índice de la recta opuesta:
+
+            \begin{align*}
+                \beta_{1} \colon \qquad (\vb{u}_{2} - \vb{u}_{3}) \vdot \vb{x} &= (c_{2} - c_{3}),\\
+                \beta_{2} \colon \qquad (\vb{u}_{3} - \vb{u}_{1}) \vdot \vb{x} &= (c_{3} - c_{1}),\\
+                \beta_{3} \colon \qquad (\vb{u}_{1} - \vb{u}_{2}) \vdot \vb{x} &= (c_{1} - c_{2}).
+            \end{align*}
+
+            El negativo de cualquiera de ellas se obtiene sumando las otras dos.
+        \end{proof}
 \end{document}
