@@ -954,4 +954,28 @@
                 \vb{q} = \vb{p} + \left(\dfrac{c - (\vb{n} \vdot \vb{p})}{\vb{n} \vdot \vb{n}}\right)\vb{n}.
             \end{equation*}
         \end{prop}
+
+        \subsection{La mediatriz}
+
+        Dados dos puntos \(\vb{p}\) y \(\vb{q}\) en \(\mathbb{R}^{2}\), ¿cuál es el lugar geométrico de los puntos que equidistan de ellos? Es decir, hay que describir al conjunto
+        
+        \begin{equation*}
+            \left\lbrace\vb{x} \in \mathbb{R}^{2} \mid \textrm{d}(\vb{p}, \vb{x}) = \textrm{d}(\vb{q}, \vb{x})\right\rbrace.
+        \end{equation*}
+
+        Al desarrollar la ecuación \(\textrm{d}(\vb{p}, \vb{x})^{2} = \textrm{d}(\vb{q}, \vb{x})^{2}\), que equivale a la anterior pues las distancias son positivas, tenemos
+
+        \begin{align*}
+            (\vb{p} - \vb{x}) \vdot (\vb{p} - \vb{x}) &= (\vb{q} - \vb{x}) \vdot (\vb{q} - \vb{x}),\\
+            \vb{p} \vdot \vb{p} - 2(\vb{p} \vdot \vb{x}) + \vb{x} \vdot \vb{x} &= \vb{q} \vdot \vb{q} - 2(\vb{q} \vdot \vb{x}) + \vb{x} \vdot \vb{x},\\
+            \vb{p} \vdot \vb{p} - \vb{q} \vdot \vb{q} &= 2(\vb{p} - \vb{q}) \vdot \vb{x}
+        \end{align*}
+
+        que se puede reescribir como
+
+        \begin{equation*}
+            (\vb{p} - \vb{q}) \vdot \vb{x} = (\vb{p} - \vb{q}) \vdot \left(\dfrac{1}{2}(\vb{p} + \vb{q})\right).
+        \end{equation*}
+
+        Y esta es la ecuación normal de la recta ortogonal al segmento \(\overline{\vb{p}\vb{q}}\) y que lo intersecta en su punto medio, llamada la \textcolor{blue}{mediatriz} de \(\vb{p}\) y \(\vb{q}\).
 \end{document}
