@@ -896,4 +896,62 @@
                 \item \(\textrm{d}(\vb{x}, \vb{y}) \leq \textrm{d}(\vb{x}, \vb{z}) + \textrm{d}(\vb{z}, \vb{y})\).
             \end{enumerate}
         \end{theorem}
+
+        \subsection{Distancia de un punto a una recta}
+
+        Consideremos el siguiente problema. Nos dan una recta
+
+        \begin{equation*}
+            \ell \colon\quad \vb{n} \vdot \vb{x} = c
+        \end{equation*}
+
+        y un punto \(\vb{p}\); y se nos pregunta cuál es la distancia de \(\vb{p}\) a \(\ell\), que podemos denotar con \(d(\vb{u}, \ell)\).
+
+        Es más fácil resolverlo si lo pensamos con un problema aparentemente más complicado: ¿cuál es el punto de \(\ell\) más cercano a \(\vb{p}\)? Llamémoslo \(\vb{q} \in \ell\), aunque sea incógnito. El meollo del asunto es que la recta que pasa por \(\vb{p}\) y \(\vb{q}\) debe ser ortogonal a \(\ell\). Es decir, si el segmento \(\overline{\vb{p}\vb{q}}\) es ortogonal a \(\ell\), entonces \(\vb{q}\) es el punto en \(\ell\) más cercano a \(\vb{p}\).
+
+        \missingfigure[]{Insertar diagrama correspondiente a la representación del planteamiento del problema sobre la distancia de un punto a una recta de la página 75.}
+
+        Para demostrarlo considérese cualquier otro punto \(\vb{x} \in \ell\) y el triángulo rectángulo \(\vb{x},\ \vb{q},\ \vb{p}\) y apliquése el teorema de Pitágoras para ver que \(\textrm{d}(\vb{x}, \vb{p}) \geq \textrm{d}(\vb{q}, \vb{p})\). Como la dirección ortogonal a \(\ell\) es precisamente \(\vb{n}\), entonces debe existir \(t \in \mathbb{R}\) tal que \(\vb{q} - \vb{p} = t\vb{n}\). La nueva incógnita \(t\) nos servirá pra medir la distancia de \(\vb{p}\) a \(\ell\). Tenemos entonces que nuestras incógnitas \(\vb{q}\) y \(t\) cumplen las siguientes ecuaciones:
+
+        \begin{align*}
+            \vb{n} \vdot \vb{q} &= c,\\
+            \vb{q} &= \vb{p} &= t\vb{n},\\
+        \end{align*}
+
+        donde la primera dice que \(\vb{q} \in \ell\) y la segunda que el segmento \(\overline{\vb{p}\vb{q}}\) es ortogonal a \(\ell\).
+        
+        Tomando el producto interior de \(\vb{n}\) con la segunda ecuación, obtenemos
+
+        \begin{equation*}
+            \vb{n} \vdot \vb{q} - \vb{n} \vdot \vb{p} = t(\vb{n} \vdot \vb{n}).
+        \end{equation*}
+
+        De donde, al sustituir la primera ecuación, se puede despejar \(t\) en puros términos conocidos:
+
+        \begin{equation*}
+            c - (\vb{n} \vdot \vb{p}) = t (\vb{n} \vdot \vb{n})\quad \Longleftarrow\quad t = \dfrac{c - \vb{n} \vdot \vb{p}}{\vb{n} \vdot \vb{n}}.
+        \end{equation*}
+
+        De aquí se deduce que 
+
+        \begin{equation*}
+            \vb{q} = \vb{p} + \left(\dfrac{c - (\vb{n} \vdot \vb{p})}{\vb{n} \vdot \vb{n}}\right)\vb{n}
+        \end{equation*}
+        \begin{equation*}
+            \textrm{d}(\vb{p}, \ell) = \abs{t\vb{n}} = \abs{t}\abs{\vb{n}} = \dfrac{\abs{c - (\vb{n} \vdot \vb{p})}}{\abs{\vb{n} \vdot \vb{n}}}\abs{\vb{n}} = \dfrac{\abs{c - (\vb{n} \vdot \vb{p})}}{\abs{\vb{u}}}.
+        \end{equation*}
+
+        \begin{prop}
+            Sea \(\Pi\) un hiperplano en \(\mathbb{R}^{n}\) dado por la ecuación \(\vb{n} \vdot \vb{x} = c\), y sea \(\vb{p} \in \mathbb{R}^{n}\) cualquier punto. Entonces
+
+            \begin{equation*}
+                \textrm{d}(\vb{p}, \Pi) = \dfrac{\abs{c - (\vb{n} \vdot \vb{p})}}{\abs{\vb{u}}},
+            \end{equation*}
+
+            y la proyección ortogonal de \(\vb{p}\) sobre \(\Pi\) (es decir, el punto más cercano) es
+
+            \begin{equation*}
+                \vb{q} = \vb{p} + \left(\dfrac{c - (\vb{n} \vdot \vb{p})}{\vb{n} \vdot \vb{n}}\right)\vb{n}.
+            \end{equation*}
+        \end{prop}
 \end{document}
