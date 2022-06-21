@@ -1091,4 +1091,54 @@
             \item Dada la circunferencia \(x^{2} + y^{2} - 2x - 4y - 1 = 0\), ¿cuál es su radio? \textcolor{green}{\(2.45\)}.
             \item Dada la circunferencia \(x^{2} + y^{2} - 2x - 4y - 1 = 0\) y el punto \(e = (5, 0)\), se tiene que los puntos de tangencia desde el punto \(e\) hacia la circunferencia son \(t_{1} = (1.28, -0.44)\) y \(t_{2} = (u, v)\) ¿cúal es el valor de \(v\)? \textcolor{green}{\(3.23\)}
         \end{enumerate}
+
+        \section{Solución del examen 1}
+
+        \begin{enumerate}
+            \item Dar la ecuación paramétrica, normal y baricéntrica de la recta \(y + 2x -1 = 0\).
+            
+            \begin{itemize}
+                \item Representación paramétrica
+                
+                Sea \(y = 1 -2x\). Encontremos dos puntos, con \(x = 0\) y \(x = 1\).
+                
+                \begin{itemize}
+                    \item \(x = 0\)
+                    
+                    \begin{align*}
+                        y &= 1 - 2(0),\\
+                        y &= 1,\\
+                        \Rightarrow\; a &= (0, 1).
+                    \end{align*}
+
+                    \item \(x = 1\)
+                        \begin{align*}
+                            y &= 1 - 2(1),\\
+                            y &= -1,\\
+                            \Rightarrow\; b &= (1, -1).
+                        \end{align*}
+                \end{itemize}
+
+                Ahora que tenemos dos puntos que pertenecen a la recta, calculamos el vector de dirección \(\vb{b} - \vb{a}\),
+
+                \begin{align*}
+                    \vb{b} - \vb{a} &= (1, -1) - (0, 1),\\
+                                    &= (1 - 0, -1 - 1),\\
+                    \vb{v}          &= (1, -2). 
+                \end{align*}
+
+                Recordando que la ecuación paramétrica de una recta está definida como \(\ell \colon \left\lbrace \vb{p} + t\vb{v} \mid t \in \mathbb{R}\right\rbrace\). Sea \(\vb{p} = a = (0, 1)\), la ecuación paramétrica queda como
+
+                \begin{equation*}
+                    \ell \colon \left (0, 1) + t(1, -2) \mid t \in \mathbb{R}\lbrace\right\rbrace.
+                \end{equation*}
+
+                \item Representación normal
+                \item Representación baricéntrica
+            \end{itemize}
+
+            \item Calcula las coordenadas del centro de la circunferencia que pasa por los puntos \((1, 2),\ (4, 3),\ (1, -3)\) y el radio de dicha circunferencia.
+            \item Demuestra que si \(u,\ v\) son dos vectores no nulos, entonces \(u + v\) y \(u - v\) son perpendiculares si y solo si \(\abs{u} = \abs{v}\).
+            \item Demuestra que \(\overline{xy} = \left\lbrace z \in \mathbb{R}^{2} \mid d(x, y) = d(x, z) + d(z, y)\right\rbrace\), donde \(\overline{xy}\) es el segmento determinado por \(x,\ y\).
+        \end{enumerate}
 \end{document}
