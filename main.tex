@@ -1167,5 +1167,72 @@
             \item Calcula las coordenadas del centro de la circunferencia que pasa por los puntos \((1, 2),\ (4, 3),\ (1, -3)\) y el radio de dicha circunferencia.
             \item Demuestra que si \(u,\ v\) son dos vectores no nulos, entonces \(u + v\) y \(u - v\) son perpendiculares si y solo si \(\abs{u} = \abs{v}\).
             \item Demuestra que \(\overline{xy} = \left\lbrace z \in \mathbb{R}^{2} \mid d(x, y) = d(x, z) + d(z, y)\right\rbrace\), donde \(\overline{xy}\) es el segmento determinado por \(x,\ y\).
+            
+            Recordemos que 
+
+            \begin{equation*}
+                \overline{xy} = \left\lbrace x + t(y - x) \mid t \in \mathbb{R}\right\rbrace. 
+            \end{equation*}
+
+            Puesto que queremos demostrar la igualdad de la desigualdad del triángulo, esto quiere decir que los tres puntos son colineales.
+
+            Sea \(z \in \overline{xy} \implies z = x + t(y - x)\) y \(t \in [0, 1]\). Calculamos \(d(x, z)\) y \(d(z, y)\).
+
+            \begin{itemize}
+                \item \(d(x, z)\)
+                
+                \begin{align*}
+                    d(x, z) &= \sqrt{(x + t(y - x) - x) \vdot (x + t(y - x) - x)},\\
+                            &= \sqrt{t^2(y - x) \vdot (y - x)},
+                            &= t\abs{y - x}, \\
+                    d(x, z) &= td(x, y).
+                \end{align*}
+                \item \(d(z, y)\)
+                
+                \begin{align*}
+                    d(z, y) &= \sqrt{(x + t(y - x) - y) \vdot (x + t(y - x) - y)},\\
+                            &= \sqrt{((1 - t)x - (1 - t)y) \vdot ((1 - t)x - (1 - t)y)},\\
+                            &= \sqrt{(1 - t)^{2}(x - y) \vdot (x - y)},\\
+                            &= (1 - t)\abs{x - y},\\
+                    d(z, y) &= (1 - t)d(x, y).
+                \end{align*}
+            \end{itemize}
+
+            Sumando \(d(x, z)\) y \(d(z, y)\), obtenemos
+
+            \begin{align*}
+                d(x, z) + d(z, y) &= td(x, y) + d(x, y) - td(x, y),\\
+                d(x, z) + d(z, y) &= d(x, y).
+            \end{align*}
+
+            Por lo tanto, se cumple la igualdad.
+
+            \vspace{5pt}
+            \hrule
+            \vspace{5pt}
+
+            Ahora para el regreso, consideramos \(z \in \left\lbrace z \in \mathbb{R}^{2} \mid d(x, y) = d(x, z) + d(z, y)\right\rbrace\). Por lo tanto, \(x, y, z\) colineales y \(z = x + t(y - x)\) con \(t \in \mathbb{R}\).
+
+            Como
+
+            \begin{align*}
+                d(x, z) &= \abs{t}d(x, y),\\
+                d(z, y) &= \abs{1 -t}d(x, y)
+            \end{align*}
+
+            Entonces, 
+
+            \begin{align*}
+                1 = \dfrac{d(x, z) + d(z, y)}{d(x, y)} &= \dfrac{d(x, y)(\abs{t} + \abs{1 - t})d(x, y)}{d(x, y)},\\
+                \abs{t} + \abs{1 - t} &= 1.
+            \end{align*}
+
+            Como \(\abs{t},\ \abs{1 - t} > 0\) y, además, \(\abs{t},\ \abs{1 - t} < 1\). Entones, \(t \in (-1, 1)\), por lo que 
+
+            \begin{equation*}
+                1 - t < 1.
+            \end{equation*}
+
+            Sin embargo, si \(t < 0 \implies 1 - t > 1 \implies \abs{1 - t} > 1\) lo cual es una contracción. Por lo tanto, \(t > 0\) y, además, \(t \in (0, 1)\).
         \end{enumerate}
 \end{document}
